@@ -1,0 +1,55 @@
+body {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+a:link {
+  color: #00CC00;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #009966;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  border: 0;
+}
+
+.copyright {
+  text-align: center;
+  font-size: xx-small;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  margin-left: 140px;
+}
+
+.logo {
+  text-align: center;
+  margin-left: 140px;
+}
+
+.menu {
+  float: left;
+}
+
+.main {
+  margin-left: 200px;
+}
+
+.versions, .versions td, .versions th {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.versions td, .versions th {
+  width: 160px;
+}
+
+.versions th {
+  font-size: x-small;
+}

@@ -1,11 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <title>Functional Java</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <link href="syntaxhighlighter-1.5.1/dp.SyntaxHighlighter/Styles/SyntaxHighlighter.css"
+          rel="stylesheet" type="text/css">
+    <meta http-equiv="Content-Language" content="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta content="Tony Morris" name="author">
+    <meta content="Copyright Tony Morris 2008-2010" name="copyright">
+    <meta content="Functional,Java,Programming" name="keywords">
+    <meta content="Functional Java" name="description">
+    <script type="text/javascript">
+        var home = new Image();
+        home.src = "images/buttons/home/1/over.png";
+        var examples = new Image();
+        examples.src = "images/buttons/examples/1/over.png";
+        var download = new Image();
+        download.src = "images/buttons/download/1/over.png";
+        var api = new Image();
+        api.src = "images/buttons/api/1/over.png";
+        var source = new Image();
+        source.src = "images/buttons/source/1/over.png";
+        var community = new Image();
+        community.src = "images/buttons/community/1/over.png";
+        var issues = new Image();
+        issues.src = "images/buttons/issues/1/over.png";
+    </script>
+    <script type="text/javascript">
 
-<html>
-<title>
-FJ title
-</title>
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
 
+    </script>
+    <script type="text/javascript">
+
+        var pageTracker = _gat._getTracker("UA-4485773-1");
+        pageTracker._initData();
+        pageTracker._trackPageview();
+
+    </script>
+</head>
 <body>
-FJ website on project functionaljava.github.io on branch master.
-</body>
+<div class="logo">
+    <img src="images/logo-600x144.png" alt="Functional Java">
+</div>
+<hr>
+<div class="menu">
+    <p>
+        <a href="">
+            <img src="images/buttons/home/1/up.png" alt="Home" onmouseout="src='images/buttons/home/1/up.png'"
+                 onmouseover="src='images/buttons/home/1/over.png'">
+        </a>
+    </p>
 
+    <p>
+        <a href="examples/1.5/">
+            <img src="images/buttons/examples/1/up.png" alt="Examples"
+                 onmouseout="src='images/buttons/examples/1/up.png'"
+                 onmouseover="src='images/buttons/examples/1/over.png'">
+        </a>
+    </p>
+
+    <p>
+        <a href="download/">
+            <img src="images/buttons/download/1/up.png" alt="Download"
+                 onmouseout="src='images/buttons/download/1/up.png'"
+                 onmouseover="src='images/buttons/download/1/over.png'">
+        </a>
+    </p>
+
+    <p>
+        <a href="http://functionaljava.googlecode.com/svn/artifacts/3.0/javadoc/index.html">
+            <img src="images/buttons/api/1/up.png" alt="API" onmouseout="src='images/buttons/api/1/up.png'"
+                 onmouseover="src='images/buttons/api/1/over.png'">
+        </a>
+    </p>
+
+    <p>
+        <a href="http://github.com/functionaljava/functionaljava">
+            <img src="images/buttons/source/1/up.png" alt="Source" onmouseout="src='images/buttons/source/1/up.png'"
+                 onmouseover="src='images/buttons/source/1/over.png'">
+        </a>
+    </p>
+
+    <p>
+        <a href="community/">
+            <img src="images/buttons/community/1/up.png" alt="Community"
+                 onmouseout="src='images/buttons/community/1/up.png'"
+                 onmouseover="src='images/buttons/community/1/over.png'">
+        </a>
+    </p>
+
+    <p>
+        <a href="http://code.google.com/p/functionaljava/issues/list">
+            <img src="images/buttons/issues/1/up.png" alt="Issues" onmouseout="src='images/buttons/issues/1/up.png'"
+                 onmouseover="src='images/buttons/issues/1/over.png'">
+        </a>
+    </p>
+</div>
+<div class="main">
+    <p>
+        Functional Java is an open source library that seeks to improve the experience of using the Java programming
+        language in a production environment. The library implements several advanced programming concepts that assist
+        in achieving composition-oriented development. Functional Java is written using vanilla Java 1.5 syntax and
+        requires no external supporting libraries. The JAR file will work with your Java 1.5 project without any
+        additional effort.
+    </p>
+    <p>
+        Functional Java also serves as a platform for learning functional
+        programming concepts by introducing these concepts using a familiar language. The library is
+        intended for use in production applications and is thoroughly tested using the technique of
+        automated specification-based testing with
+        <a href="http://code.google.com/p/scalacheck/">ScalaCheck</a>.
+    </p>
+
+    <p>
+        Functional Java includes the following features:
+    </p>
+    <ul>
+        <li>
+            Fully operational Actors for parallel computations (<code>fj.control.parallel</code>) and layered abstractions
+            such as parallel-map, map-reduce, parallel-zip.
+        </li>
+        <li>
+            A package (<code>fj.data.fingertrees</code>) providing 2-3 finger trees for a functional representation of
+            persistent sequences supporting access to the ends in amortized O(1) time.
+        </li>
+        <li>
+            Type-safe heterogeneous list (<code>fj.data.hlist</code>) for lists of elements of differing types without
+            sacrificing type-safety.
+        </li>
+        <li>
+            Monadic parser combinators for writing parsers by combining smaller parsers using composition.
+        </li>
+        <li>
+            Conversion of data types to/from standard Java types.
+        </li>
+        <li>
+            Immutable, in-memory singly linked list (<code>fj.data.List</code>).
+        </li>
+        <li>
+            Immutable lazy singly linked list (<code>fj.data.Stream</code>).
+        </li>
+        <li>
+            Array wrapper (<code>fj.data.Array</code>).
+        </li>
+        <li>
+            Optional value &mdash; <em>type-safe null</em> (<code>fj.data.Option</code>).
+        </li>
+        <li>
+            Disjoint union data type &mdash; <em>compositional exception handling</em> (<code>fj.data.Either</code>).
+        </li>
+        <li>
+            Monoid (<code>fj.Monoid</code>).
+        </li>
+        <li>
+            Functions with arity 1 to 8.
+        </li>
+        <li>
+            Products of 1 to 8.
+        </li>
+        <li>
+            Configurable equality and hash-code for HashMap and HashSet.
+        </li>
+        <li>
+            Natural number data type (<code>fj.data.Natural</code>).
+        </li>
+        <li>
+            Immutable set implementation using a red/black tree.
+        </li>
+        <li>
+            Immutable multi-way tree &mdash; aka rose tree (<code>fj.data.Tree</code>).
+        </li>
+        <li>
+            Immutable tree-map using a red/black tree implementation (<code>fj.data.TreeMap</code>).
+        </li>
+        <li>
+            Zipper implementations for streams and trees.
+        </li>
+        <li>
+            Automated specification-based testing framework (<code>fj.test</code>).
+        </li>
+    </ul>
+    <p>
+        Functional Java includes usage examples and notably, code examples that make use of the
+        <a href="http://javac.info/">Java 7 BGGA proposal syntax</a>. Here is one such example
+        (import statements omitted) that maps a transformation across an array by adding 42 to
+        each element.
+    </p><pre class="java:nocontrols:nogutter" name="code" id="Array.map">
+      final Array&lt;Integer&gt; a = array(1, 2, 3);
+      final Array&lt;Integer&gt; b = a.map({int i =&gt; i + 42});
+      arrayShow(intShow).println(b); // {43,44,45}
+    </pre>
+    <div>
+        <script type="text/javascript"
+                src="syntaxhighlighter-1.5.1/dp.SyntaxHighlighter/Scripts/shCore.js"></script>
+        <script type="text/javascript"
+                src="syntaxhighlighter-1.5.1/dp.SyntaxHighlighter/Scripts/shBrushJava.js"></script>
+        <script type="text/javascript">
+            dp.SyntaxHighlighter.ClipboardSwf = 'flash/clipboard.swf';
+            dp.SyntaxHighlighter.HighlightAll('code');
+        </script>
+    </div>
+</div>
+<div class="copyright">
+    <p>
+        Copyright &copy; 2010
+    </p>
+</div>
+</body>
 </html>
