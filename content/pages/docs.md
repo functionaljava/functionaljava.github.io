@@ -4,6 +4,7 @@ type=page
 status=published
 ~~~~~~
 
+[Javadoc API](api.html)
 [Examples (BGGA Proposal Syntax)](examples-bgga.html)
 [Examples (Java 7 Syntax)](examples-java7.html)
 
