@@ -9,14 +9,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">${config.site_title}</a>
+          <a class="navbar-brand" href="${config.site_context}">${config.site_title}</a>
         </div>
         
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="/pages/about.html">About me</a></li>
-            <li><a href="/pages/contact.html">Contact</a></li>
+            <li><a href="${config.site_context}pages/about.html">About me</a></li>
+            <li><a href="${config.site_context}pages/contact.html">Contact</a></li>
           </ul>
         
         <!-- Right navigation -->
@@ -33,9 +33,9 @@
             </#if>
           </#if>
           <#if config.render_archive?? && config.render_archive == "true">
-          <li><a href="/${config.archive_file}"><i class="fa fa-list"></i> ${config.tr_archive}</a></li>
+          <li><a href="${config.site_context}${config.archive_file}"><i class="fa fa-list"></i> ${config.tr_archive}</a></li>
           </#if>
-          <li><a href="/${config.feed_file}" title="Rss"><i class="fa fa-rss"></i> ${config.tr_feed}</a></li>
+          <li><a href="${config.site_context}${config.feed_file}" title="Rss"><i class="fa fa-rss"></i> ${config.tr_feed}</a></li>
         </ul>
         <!-- Right navigation end -->
 

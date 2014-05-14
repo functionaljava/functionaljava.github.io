@@ -67,31 +67,31 @@
 <#if config.prettify_enabled?? && config.prettify_enabled == "true">
     <#switch config.prettify_theme>
       <#case "github">
-    <link rel="stylesheet" href="/css/prettify-themes/github.css">
+    <link rel="stylesheet" href="${config.site_context}css/prettify-themes/github.css">
         <#break>
       <#case "hemisu-dark">
-    <link rel="stylesheet" href="/css/prettify-themes/hemisu-dark.css">
+    <link rel="stylesheet" href="${config.site_context}css/prettify-themes/hemisu-dark.css">
         <#break>
       <#case "hemisu-light">
-    <link rel="stylesheet" href="/css/prettify-themes/hemisu-light.css">
+    <link rel="stylesheet" href="${config.site_context}css/prettify-themes/hemisu-light.css">
         <#break>
       <#case "tomorrow-night-blue">
-    <link rel="stylesheet" href="/css/prettify-themes/tomorrow-night-blue.css">
+    <link rel="stylesheet" href="${config.site_context}css/prettify-themes/tomorrow-night-blue.css">
         <#break>
       <#case "tomorrow-night-bright">
-    <link rel="stylesheet" href="/css/prettify-themes/tomorrow-night-bright.css">
+    <link rel="stylesheet" href="${config.site_context}css/prettify-themes/tomorrow-night-bright.css">
         <#break>
       <#case "tomorrow-night-eighties">
-    <link rel="stylesheet" href="/css/prettify-themes/tomorrow-night-eighties.css">
+    <link rel="stylesheet" href="${config.site_context}css/prettify-themes/tomorrow-night-eighties.css">
         <#break>
       <#case "tomorrow-night">
-    <link rel="stylesheet" href="/css/prettify-themes/tomorrow-night.css">
+    <link rel="stylesheet" href="${config.site_context}css/prettify-themes/tomorrow-night.css">
         <#break>
       <#case "tomorrow">
-    <link rel="stylesheet" href="/css/prettify-themes/tomorrow.css">
+    <link rel="stylesheet" href="${config.site_context}css/prettify-themes/tomorrow.css">
         <#break>
       <#case "vibrant-ink">
-    <link rel="stylesheet" href="/css/prettify-themes/vibrant-ink.css">
+    <link rel="stylesheet" href="${config.site_context}css/prettify-themes/vibrant-ink.css">
         <#break>
       <#default>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css">
@@ -99,15 +99,15 @@
     </#switch>
 </#if>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="${config.site_context}css/base.css">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-      <script src="/js/html5shiv.js"></script>
+      <script src="${config.site_context}js/html5shiv.js"></script>
     <![endif]-->
 
     <!-- Fav icon -->
-    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="${config.site_context}img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="${config.site_context}img/favicon.ico" type="image/x-icon">
   </head>
   <body>

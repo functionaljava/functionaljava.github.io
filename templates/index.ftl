@@ -14,7 +14,7 @@
             <#if counter == post_limit>
               <br>
               <ul class="pager">
-                ${config.tr_older_in_archive} <li><a href="/${config.archive_file}"> ${config.tr_archive}</a></li>
+                ${config.tr_older_in_archive} <li><a href="${config.site_context}${config.archive_file}"> ${config.tr_archive}</a></li>
               <ul>
               <#break>
             </#if>

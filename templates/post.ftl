@@ -9,7 +9,7 @@
               <ol class="breadcrumb tagsbar">
               <#list content.tags as rawtag>
                 <#assign tag = rawtag?trim?replace(" ", "-")>
-                <li><a href="/tags/${tag}.html">${tag}</a></li>
+                <li><a href="${config.site_context}tags/${tag}.html">${tag}</a></li>
               </#list>
               </ol>
             </#if>
