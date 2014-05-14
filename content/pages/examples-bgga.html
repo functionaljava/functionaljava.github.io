@@ -1,0 +1,224 @@
+title=Examples - BGGA Proposal
+date=2013-09-24
+type=page
+status=published
+~~~~~~
+
+<div>
+    
+	<h6><em><a href="./examples-java7.html">Java 7</a></em></h6>
+
+	<p>These examples use the Java 7 closures proposal and have <a href="./examples-java7.html">corresponding examples that use traditional Java syntax</a> in the Functional Java <a href="../download">download</a>. The BGGA closure prototype is required to compile these examples, which can be downloaded from <a href="http://javac.info/">http://javac.info/</a>. Any JVM version 1.5 or higher is required to use the Functional Java library or run the compiled examples.</p>
+	
+	<a name="Examples.list"></a>
+
+        
+	<ul>
+		<li><a href="#Array.exists">Array exists</a></li>
+		<li><a href="#Array.filter">Array filter</a></li>
+		<li><a href="#Array.foldLeft">Array foldLeft</a></li>
+		<li><a href="#Array.forall">Array forall</a></li>
+		<li><a href="#Array.map">Array map</a></li>
+		<li><a href="#List.map">List map</a></li>
+		<li><a href="#Option.bind">Option bind</a></li>
+		<li><a href="#Option.filter">Option filter</a></li>
+		<li><a href="#Option.map">Option map</a></li>
+	</ul>
+	<hr>
+	<a name="Array.exists"></a><h5>Array exists <a href="http://functionaljava.googlecode.com/svn/artifacts/3.0/demo/bgga/Array_exists.java">&#x00A7;</a></h5>
+
+	<p>Checks for the existence of a String that has all lower case characters. In this case it is true (since, the case of &quot;what&quot;), but without this specific case, it is false. This example uses List.forall to test the characters of the String.</p>
+	
+<pre><code class="java">
+import fj.data.Array;
+import static fj.data.Array.array;
+import static fj.data.List.fromString;
+import static java.lang.Character.isLowerCase;
+
+public final class Array_exists {
+  public static void main(final String[] args) {
+    final Array&lt;String&gt; a = array(&quot;Hello&quot;, &quot;There&quot;, &quot;what&quot;, &quot;DAY&quot;, &quot;iS&quot;, &quot;iT&quot;);
+    final boolean b = a.exists({String s =&gt; fromString(s).forall({char c =&gt; isLowerCase(c)})});
+    System.out.println(b); // true (&quot;what&quot; provides the only example; try removing it)
+  }
+}
+</code></pre>
+
+	<hr>
+	<a name="Array.filter"></a><h5>Array filter <a href="http://functionaljava.googlecode.com/svn/artifacts/3.0/demo/bgga/Array_filter.java">&#x00A7;</a></h5>
+
+	<p>Removes elements from an array that do not meet a certain criteria. In this case, we are using an array of integers and the filter removes any odd numbers.</p>
+<pre><code class="java">
+import fj.data.Array;
+import static fj.data.Array.array;
+import static fj.pre.Show.arrayShow;
+import static fj.pre.Show.intShow;
+
+public final class Array_filter {
+  public static void main(final String[] args) {
+    final Array&lt;Integer&gt; a = array(97, 44, 67, 3, 22, 90, 1, 77, 98, 1078, 6, 64, 6, 79, 42);
+    final Array&lt;Integer&gt; b = a.filter({int i =&gt; i % 2 == 0});
+    arrayShow(intShow).println(b); // {44,22,90,98,1078,6,64,6,42}
+  }
+}
+</code></pre>
+	<hr>
+	<a name="Array.foldLeft"></a><h5>Array foldLeft <a href="http://functionaljava.googlecode.com/svn/artifacts/3.0/demo/bgga/Array_foldLeft.java">&#x00A7;</a></h5>
+	
+	<p>Reduces the list applying a function per element. In this case, the fold sums the elements with a starting value of 0. Since 0 + 97 + 44 + 67 + 3 + 22 + 90 + 1 + 77 + 98 + 1078 + 6 + 64 + 6 + 79 + 42 == 1774 the result of the fold is 1774.</p>
+
+<pre><code class="java">
+import fj.data.Array;
+import static fj.data.Array.array;
+
+public final class Array_foldLeft {
+  public static void main(final String[] args) {
+    final Array&lt;Integer&gt; a = array(97, 44, 67, 3, 22, 90, 1, 77, 98, 1078, 6, 64, 6, 79, 42);
+    final int b = a.&lt;Integer&gt;foldLeft({int i =&gt; {int j =&gt; i + j}}, 0);
+    System.out.println(b); // 1774
+  }
+}
+</code></pre>
+            
+	<hr>
+	<a name="Array.forall"></a><h5>Array forall <a href="http://functionaljava.googlecode.com/svn/artifacts/3.0/demo/bgga/Array_forall.java">&#x00A7;</a></h5>
+	
+	<p>Checks that all Strings in the array have lower case characters. In this case, the check fails because of the case of &quot;There&quot;, however, the removal of this case produces a result of true.</p>
+
+<pre><code class="java">
+import fj.data.Array;
+import static fj.data.Array.array;
+import static fj.data.List.fromString;
+import static java.lang.Character.isLowerCase;
+
+public final class Array_forall {
+  public static void main(final String[] args) {
+    final Array&lt;String&gt; a = array(&quot;hello&quot;, &quot;There&quot;, &quot;what&quot;, &quot;day&quot;, &quot;is&quot;, &quot;it&quot;);
+    final boolean b = a.forall({String s =&gt; fromString(s).forall({char c =&gt; isLowerCase(c)})});
+    System.out.println(b); // false (&quot;There&quot; is a counter-example; try removing it)
+  }
+}
+</code></pre>
+            
+	<hr>
+	<a name="Array.map"></a><h5>Array map <a href="http://functionaljava.googlecode.com/svn/artifacts/3.0/demo/bgga/Array_map.java">&#x00A7;</a> </h5>
+	
+	<p>Maps a function across the array of integers. In this case, the function adds 42 to each element of the array to produce a new array.</p>
+
+<pre><code class="java">
+import fj.data.Array;
+import static fj.data.Array.array;
+import static fj.pre.Show.arrayShow;
+import static fj.pre.Show.intShow;
+
+public final class Array_map {
+  public static void main(final String[] args) {
+    final Array&lt;Integer&gt; a = array(1, 2, 3);
+    final Array&lt;Integer&gt; b = a.map({int i =&gt; i + 42});
+    arrayShow(intShow).println(b); // {43,44,45}
+  }
+}
+</code></pre>
+
+	<hr>
+	<a name="List.map"></a><h5>List map <a href="http://functionaljava.googlecode.com/svn/artifacts/3.0/demo/bgga/List_map.java">&#x00A7;</a></h5>
+	
+	<p>Maps a function across a list of integers. This is similar to the Array map. This example adds 42 to each element of the list to produce a new list.</p>
+
+<pre><code class="java">
+import static fj.data.List.list;
+import fj.data.List;
+import static fj.pre.Show.intShow;
+import static fj.pre.Show.listShow;
+
+public final class List_map {
+  public static void main(final String[] args) {
+    final List&lt;Integer&gt; a = list(1, 2, 3);
+    final List&lt;Integer&gt; b = a.map({int i =&gt; i + 42});
+    listShow(intShow).println(b); // [43,44,45]
+  }
+}
+</code></pre>
+            
+	<hr>
+	<a name="Option.bind"></a><h5>Option bind <a href="http://functionaljava.googlecode.com/svn/artifacts/3.0/demo/bgga/Option_bind.java">&#x00A7;</a></h5>
+
+            
+	<p>Binds a function across the optional value type. The function checks if the contained value is even and if it is multiples that value by 3 and returns that new value. If the contained value is odd (or if there is no value), then no value is returned (none).</p>
+
+<pre><code class="java">
+import fj.data.Option;
+import static fj.data.Option.none;
+import static fj.data.Option.some;
+import static fj.pre.Show.intShow;
+import static fj.pre.Show.optionShow;
+
+public final class Option_bind {
+  public static void main(final String[] args) {
+    final Option&lt;Integer&gt; o1 = some(7);
+    final Option&lt;Integer&gt; o2 = some(8);
+    final Option&lt;Integer&gt; o3 = none();
+    final Option&lt;Integer&gt; p1 = o1.bind({int i =&gt; i % 2 == 0 ? some(i * 3) : Option.&lt;Integer&gt;none()});
+    final Option&lt;Integer&gt; p2 = o2.bind({int i =&gt; i % 2 == 0 ? some(i * 3) : Option.&lt;Integer&gt;none()});
+    final Option&lt;Integer&gt; p3 = o3.bind({int i =&gt; i % 2 == 0 ? some(i * 3) : Option.&lt;Integer&gt;none()});
+    optionShow(intShow).println(p1); // None
+    optionShow(intShow).println(p2); // Some(24)
+    optionShow(intShow).println(p3); // None
+  }
+}
+</code></pre>
+            
+	<hr>
+	<a name="Option.filter"></a><h5>Option filter <a href="http://functionaljava.googlecode.com/svn/artifacts/3.0/demo/bgga/Option_filter.java">&#x00A7;</a></h5>
+
+            
+	<p>Removes the value from the optional value if it does not match a given predicate. In this case the condition for preservation is that the contained value is an even number.</p>
+
+<pre><code class="java">
+import fj.data.Option;
+import static fj.data.Option.none;
+import static fj.data.Option.some;
+import static fj.pre.Show.intShow;
+import static fj.pre.Show.optionShow;
+
+public final class Option_filter {
+  public static void main(final String[] args) {
+    final Option&lt;Integer&gt; o1 = some(7);
+    final Option&lt;Integer&gt; o2 = none();
+    final Option&lt;Integer&gt; o3 = some(8);
+    final Option&lt;Integer&gt; p1 = o1.filter({int i =&gt; i % 2 == 0});
+    final Option&lt;Integer&gt; p2 = o2.filter({int i =&gt; i % 2 == 0});
+    final Option&lt;Integer&gt; p3 = o3.filter({int i =&gt; i % 2 == 0});
+    optionShow(intShow).println(p1); // None
+    optionShow(intShow).println(p2); // None
+    optionShow(intShow).println(p3); // Some(8)
+  }
+}
+</code></pre>
+            
+	<hr>
+	<a name="Option.map"></a><h5>Option map <a href="http://functionaljava.googlecode.com/svn/artifacts/3.0/demo/bgga/Option_map.java">&#x00A7;</a></h5>
+	
+	<p>Maps a function across the optional value type. The function adds 42 to any contained value.</p>
+
+<pre><code class="java">
+import fj.data.Option;
+import static fj.data.Option.none;
+import static fj.data.Option.some;
+import static fj.pre.Show.intShow;
+import static fj.pre.Show.optionShow;
+
+public final class Option_map {
+  public static void main(final String[] args) {
+    final Option&lt;Integer&gt; o1 = some(7);
+    final Option&lt;Integer&gt; o2 = none();
+    final Option&lt;Integer&gt; p1 = o1.map({int i =&gt; i + 42});
+    final Option&lt;Integer&gt; p2 = o2.map({int i =&gt; i + 42});
+    optionShow(intShow).println(p1); // Some(49)
+    optionShow(intShow).println(p2); // None
+  }
+}
+</code></pre>
+
+    
+</div>

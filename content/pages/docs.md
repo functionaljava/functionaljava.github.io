@@ -4,4 +4,6 @@ type=page
 status=published
 ~~~~~~
 
-Documentation
+[Examples (BGGA Proposal Syntax)](examples-bgga.html)
+[Examples (Java 7 Syntax)](examples-java7.html)
+
