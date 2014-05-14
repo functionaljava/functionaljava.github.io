@@ -4,7 +4,15 @@ type=page
 status=published
 ~~~~~~
 
-[Javadoc API](api.html)
+### Examples
+
 [Examples (BGGA Proposal Syntax)](examples-bgga.html)
 [Examples (Java 7 Syntax)](examples-java7.html)
+
+### Javadoc
+
+[Latest (4.1-SNAPSHOT)](https://functionaljava.ci.cloudbees.com/job/master/javadoc/)
+[4.0-SNAPSHOT](https://functionaljava.ci.cloudbees.com/job/4.0-SNAPSHOT/javadoc/)
+[3.2-SNAPSHOT](https://functionaljava.ci.cloudbees.com/job/3.x/javadoc/)
+[2.22](https://functionaljava.googlecode.com/svn/artifacts/2.22/javadoc/index.html)
 
