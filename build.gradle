@@ -8,7 +8,8 @@ buildscript {
   dependencies {
     classpath 'me.champeau.gradle:jbake-gradle-plugin:0.1' 
     classpath 'org.asciidoctor:asciidoctor-java-integration:0.1.4'  
-    classpath 'org.freemarker:freemarker:2.3.19'                    
+    classpath 'org.freemarker:freemarker:2.3.19'
+    classpath "org.eclipse.jetty:jetty-server:8.1.+"
   }
 }
 
@@ -17,3 +18,27 @@ apply plugin: 'jbake'
 task clean(type: Delete) {
   delete "$projectDir/build"
 }
+
+repositories {
+	mavenCentral()
+}
+
+configurations {
+	server 
+}
+
+dependencies {
+	server "org.jbake:jbake-core:2.3.0"
+    server "org.eclipse.jetty:jetty-server:8.1.+"
+
+}
+
+task server(dependsOn: "jbake") << {
+	org.jbake.launcher.Main.main(["-s"] as String[])
+}
+
+task extServer(type: JavaExec) {
+    main = "org.jbake.launcher.Main"
+	classpath configurations.server
+	args "-s"
+} 
