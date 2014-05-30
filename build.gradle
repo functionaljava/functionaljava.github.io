@@ -13,3 +13,7 @@ buildscript {
 }
 
 apply plugin: 'jbake'        
+
+task clean(type: Delete) {
+  delete "$projectDir/build"
+}
