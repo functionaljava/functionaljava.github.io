@@ -1,16 +1,21 @@
 
 buildscript {
-  repositories {
-      mavenLocal() // needed to use the local JBake 2.3.0 build
-      jcenter()
-  }
+    repositories {
+        mavenLocal() // needed to use the local JBake 2.3.0 build
+        jcenter()
+    }
 
-  dependencies {
-    classpath 'me.champeau.gradle:jbake-gradle-plugin:0.1' 
-    classpath 'org.asciidoctor:asciidoctor-java-integration:0.1.4'  
-    classpath 'org.freemarker:freemarker:2.3.19'
-    classpath "org.eclipse.jetty:jetty-server:8.1.+"
-  }
+    dependencies {
+        classpath 'me.champeau.gradle:jbake-gradle-plugin:0.1'
+        classpath 'org.asciidoctor:asciidoctor-java-integration:0.1.4'
+        classpath 'org.freemarker:freemarker:2.3.19'
+        classpath "org.eclipse.jetty:jetty-server:8.1.+"
+
+        classpath "org.pegdown:pegdown:1.4.2"
+        classpath "org.asciidoctor:asciidoctor-java-integration:0.1.4"
+        classpath "org.thymeleaf:thymeleaf:2.1.2.RELEASE"
+
+    }
 }
 
 apply plugin: 'jbake'        
@@ -34,7 +39,9 @@ dependencies {
 }
 
 task server(dependsOn: "jbake") << {
-	org.jbake.launcher.Main.main(["-s"] as String[])
+    def outDir = "$buildDir/jbake"
+    println "outDir = $outDir"
+	org.jbake.launcher.Main.main(["-s", outDir] as String[])
 }
 
 task extServer(type: JavaExec) {
