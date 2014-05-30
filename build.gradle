@@ -41,4 +41,10 @@ task extServer(type: JavaExec) {
     main = "org.jbake.launcher.Main"
 	classpath configurations.server
 	args "-s"
-} 
+}
+
+task publish(type: GradleBuild) {
+    buildFile = 'publish.gradle'
+    tasks = ['publishGhPages']
+}
+
