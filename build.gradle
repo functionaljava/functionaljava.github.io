@@ -1,0 +1,15 @@
+
+buildscript {
+  repositories {
+      mavenLocal() // needed to use the local JBake 2.3.0 build
+      jcenter()
+  }
+
+  dependencies {
+    classpath 'me.champeau.gradle:jbake-gradle-plugin:0.1-SNAPSHOT' 
+    classpath 'org.asciidoctor:asciidoctor-java-integration:0.1.4'  
+    classpath 'org.freemarker:freemarker:2.3.19'                    
+  }
+}
+
+apply plugin: 'jbake'        
