@@ -13,6 +13,7 @@ apply plugin: 'github-pages'
 
 githubPages {
     repoUri = "https://github.com/functionaljava/functionaljava.github.io.git"
+    targetBranch = "master"
     pages {
         from(file('build/jbake')) {
             into '.'
