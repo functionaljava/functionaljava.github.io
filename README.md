@@ -1,4 +1,5 @@
-fj-web-fidbake
-==============
+Functional Java Website
+========================
 
-* http://mperry.github.io/fj-web-fidbake
+This is the website for Functional Java based on the zip of the old website (http://functionaljava.org/).  The new website gets published to https://functionaljava.github.io/.
+

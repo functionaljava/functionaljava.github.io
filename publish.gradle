@@ -12,8 +12,7 @@ buildscript {
 apply plugin: 'github-pages'
 
 githubPages {
-//    repoUri = 'git@github.com:mperry/fj-web-fidbake.git'
-    repoUri = "https://github.com/mperry/fj-web-fidbake.git"
+    repoUri = "https://github.com/functionaljava/functionaljava.github.io.git"
     pages {
         from(file('build/jbake')) {
             into '.'
