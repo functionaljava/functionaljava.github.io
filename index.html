@@ -1,105 +1,68 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Functional Java</title>
-    <link href="style.css" type="text/css" rel="stylesheet">
-    <link href="syntaxhighlighter-1.5.1/dp.SyntaxHighlighter/Styles/SyntaxHighlighter.css"
-          rel="stylesheet" type="text/css">
-    <meta http-equiv="Content-Language" content="en">
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <meta content="Tony Morris" name="author">
-    <meta content="Copyright Tony Morris 2008-2010" name="copyright">
-    <meta content="Functional,Java,Programming" name="keywords">
-    <meta content="Functional Java" name="description">
-    <script type="text/javascript">
-        var home = new Image();
-        home.src = "images/buttons/home/1/over.png";
-        var examples = new Image();
-        examples.src = "images/buttons/examples/1/over.png";
-        var download = new Image();
-        download.src = "images/buttons/download/1/over.png";
-        var api = new Image();
-        api.src = "images/buttons/api/1/over.png";
-        var source = new Image();
-        source.src = "images/buttons/source/1/over.png";
-        var community = new Image();
-        community.src = "images/buttons/community/1/over.png";
-        var issues = new Image();
-        issues.src = "images/buttons/issues/1/over.png";
-    </script>
-    <script type="text/javascript">
+  <head>
+    <title>
+    Functional Java
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Author">
+    <meta name="description" content="Static blog generated with JBake">
 
-        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    <!-- Style -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/yeti/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/base.css">
 
-    </script>
-    <script type="text/javascript">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="/js/html5shiv.js"></script>
+    <![endif]-->
 
-        var pageTracker = _gat._getTracker("UA-4485773-1");
-        pageTracker._initData();
-        pageTracker._trackPageview();
+    <!-- Fav icon -->
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body>      
+    <nav class="navbar navbar-default navbar-fixed-top " role="navigation">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Functional Java</a>
+        </div>
+        
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+			<li><a href="/pages/docs.html">Docs</a></li>
+			<li><a href="/pages/community.html">Community</a></li>
+			<li><a href="/pages/download.html">Download</a></li>
+          </ul>
+        
+        <!-- Right navigation -->
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/feed.xml" title="Rss"><i class="fa fa-rss"></i> Feed</a></li>
+        </ul>
+        <!-- Right navigation end -->
 
-    </script>
-</head>
-<body>
-<div class="logo">
-    <img src="images/logo-600x144.png" alt="Functional Java">
-</div>
-<hr>
-<div class="menu">
-    <p>
-        <a href="">
-            <img src="images/buttons/home/1/up.png" alt="Home" onmouseout="src='images/buttons/home/1/up.png'"
-                 onmouseover="src='images/buttons/home/1/over.png'">
-        </a>
-    </p>
+      </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav><!-- /.navbar -->
 
-    <p>
-        <a href="examples/1.5/">
-            <img src="images/buttons/examples/1/up.png" alt="Examples"
-                 onmouseout="src='images/buttons/examples/1/up.png'"
-                 onmouseover="src='images/buttons/examples/1/over.png'">
-        </a>
-    </p>
+    <!-- Begin page content -->
+    <div class="container">
 
-    <p>
-        <a href="download/">
-            <img src="images/buttons/download/1/up.png" alt="Download"
-                 onmouseout="src='images/buttons/download/1/up.png'"
-                 onmouseover="src='images/buttons/download/1/over.png'">
-        </a>
-    </p>
+<div>
 
-    <p>
-        <a href="http://functionaljava.googlecode.com/svn/artifacts/3.0/javadoc/index.html">
-            <img src="images/buttons/api/1/up.png" alt="API" onmouseout="src='images/buttons/api/1/up.png'"
-                 onmouseover="src='images/buttons/api/1/over.png'">
-        </a>
-    </p>
+	<img src="/img/logo-600x144.png"/>
 
-    <p>
-        <a href="http://github.com/functionaljava/functionaljava">
-            <img src="images/buttons/source/1/up.png" alt="Source" onmouseout="src='images/buttons/source/1/up.png'"
-                 onmouseover="src='images/buttons/source/1/over.png'">
-        </a>
-    </p>
-
-    <p>
-        <a href="community/">
-            <img src="images/buttons/community/1/up.png" alt="Community"
-                 onmouseout="src='images/buttons/community/1/up.png'"
-                 onmouseover="src='images/buttons/community/1/over.png'">
-        </a>
-    </p>
-
-    <p>
-        <a href="http://code.google.com/p/functionaljava/issues/list">
-            <img src="images/buttons/issues/1/up.png" alt="Issues" onmouseout="src='images/buttons/issues/1/up.png'"
-                 onmouseover="src='images/buttons/issues/1/over.png'">
-        </a>
-    </p>
-</div>
-<div class="main">
     <p>
         Functional Java is an open source library that seeks to improve the experience of using the Java programming
         language in a production environment. The library implements several advanced programming concepts that assist
@@ -188,26 +151,57 @@
         <a href="http://javac.info/">Java 7 BGGA proposal syntax</a>. Here is one such example
         (import statements omitted) that maps a transformation across an array by adding 42 to
         each element.
-    </p><pre class="java:nocontrols:nogutter" name="code" id="Array.map">
-      final Array&lt;Integer&gt; a = array(1, 2, 3);
-      final Array&lt;Integer&gt; b = a.map({int i =&gt; i + 42});
-      arrayShow(intShow).println(b); // {43,44,45}
-    </pre>
-    <div>
-        <script type="text/javascript"
-                src="syntaxhighlighter-1.5.1/dp.SyntaxHighlighter/Scripts/shCore.js"></script>
-        <script type="text/javascript"
-                src="syntaxhighlighter-1.5.1/dp.SyntaxHighlighter/Scripts/shBrushJava.js"></script>
-        <script type="text/javascript">
-            dp.SyntaxHighlighter.ClipboardSwf = 'flash/clipboard.swf';
-            dp.SyntaxHighlighter.HighlightAll('code');
-        </script>
-    </div>
-</div>
-<div class="copyright">
-    <p>
-        Copyright &copy; 2010
     </p>
+	
+	
+	<pre>
+		<code class="java">
+		final Array&lt;Integer&gt; a = array(1, 2, 3);
+		final Array&lt;Integer&gt; b = a.map({int i =&gt; i + 42});
+		arrayShow(intShow).println(b); // {43,44,45}
+		</code>
+	</pre>
+	
 </div>
-</body>
+
+
+      </div><!-- /.container -->
+
+    <footer>
+      <div class="container">
+        <hr>
+        <div class="row">
+          <div class="col-xs-10">
+            <p class="text-muted credit">&copy; Mariusz Fik 2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.3.0</a> | <i title="Linux" class="fa fa-linux"></i></p>
+          </div>
+          <div class="col-xs-2 gotop">
+            <a href="#"><i class="fa fa-arrow-circle-up"> top</i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gist-embed/1.6/gist-embed.min.js"></script>
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
+    <script type="text/javascript">
+      <!-- load prettify only when needed -->
+      $(document).ready(function(){
+        var prettify = false;
+        var classToAdd = 'prettyprint snippet';
+        $("pre > code").each(function() {
+          $("pre > code").parent().addClass(classToAdd);
+          prettify = true;
+        });
+        if(prettify) {
+          prettyPrint();
+        }
+      });
+    </script>
+
+
+        </body>
 </html>
