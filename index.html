@@ -66,16 +66,15 @@
     <p>
         Functional Java is an open source library that seeks to improve the experience of using the Java programming
         language in a production environment. The library implements several advanced programming concepts that assist
-        in achieving composition-oriented development. Functional Java is written using vanilla Java 1.5 syntax and
-        requires no external supporting libraries. The JAR file will work with your Java 1.5 project without any
-        additional effort.
+        in achieving composition-oriented development. The JAR file will work with your Java 1.5 project without any
+        additional effort.  Functional Java is currently written using vanilla Java 1.5 syntax and requires no external supporting libraries.  Lambdas introduced in Java 8 may be used in future development, these will be backported using the <a href="https://github.com/orfjackal/retrolambda">Retro Lambda</a> project to be compatible with pre Java 8 bytecode.
     </p>
     <p>
         Functional Java also serves as a platform for learning functional
         programming concepts by introducing these concepts using a familiar language. The library is
         intended for use in production applications and is thoroughly tested using the technique of
         automated specification-based testing with
-        <a href="http://code.google.com/p/scalacheck/">ScalaCheck</a>.
+        <a href="http://www.scalacheck.org/">ScalaCheck</a>.
     </p>
 
     <p>
@@ -147,8 +146,7 @@
         </li>
     </ul>
     <p>
-        Functional Java includes usage examples and notably, code examples that make use of the
-        <a href="http://javac.info/">Java 7 BGGA proposal syntax</a>. Here is one such example
+        Functional Java includes usage examples, here is one such example
         (import statements omitted) that maps a transformation across an array by adding 42 to
         each element.
     </p>
@@ -157,7 +155,7 @@
 	<pre>
 		<code class="java">
 		final Array&lt;Integer&gt; a = array(1, 2, 3);
-		final Array&lt;Integer&gt; b = a.map({int i =&gt; i + 42});
+		final Array&lt;Integer&gt; b = a.map(i -&gt; i + 42);
 		arrayShow(intShow).println(b); // {43,44,45}
 		</code>
 	</pre>
