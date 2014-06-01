@@ -5,7 +5,6 @@ status=published
 ~~~~~~
 
 * [Github Project](https://github.com/functionaljava/functionaljava)
-* [Github Source (latest)](https://github.com/functionaljava/functionaljava/archive/master.zip)
 * [Issues](https://github.com/functionaljava/functionaljava/issues?state=open)
 * [Obsolete Issues (Google)](https://code.google.com/p/functionaljava/issues/list)
 * [Obsolete Google Code Hosting](https://code.google.com/p/functionaljava/)
