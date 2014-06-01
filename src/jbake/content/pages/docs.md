@@ -6,8 +6,9 @@ status=published
 
 ### Examples
 
-[Examples (BGGA Proposal Syntax)](examples-bgga.html)
+[Examples (Java 8 Syntax)](examples-java8.html)
 [Examples (Java 7 Syntax)](examples-java7.html)
+[Examples (BGGA Proposal Syntax)](examples-bgga.html)
 
 ### Javadoc
 

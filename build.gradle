@@ -44,7 +44,7 @@ task server(dependsOn: "jbake") << {
 	org.jbake.launcher.Main.main(["-s", outDir] as String[])
 }
 
-task extServer(type: JavaExec) {
+task externalServer(type: JavaExec) {
     main = "org.jbake.launcher.Main"
 	classpath configurations.server
 	args "-s"
