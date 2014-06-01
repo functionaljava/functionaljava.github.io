@@ -3,7 +3,7 @@
   <head>
     <title>
     Functional Java
-        - Examples (BGGA Proposal)
+        - Examples (Java 8)
     </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -63,15 +63,16 @@
       <div class="row">
         <div class="col-md-12">
           <article>
-            <h2>Examples (BGGA Proposal)</h2>
+            <h2>Examples (Java 8)</h2>
             <p>
 <div>
     
-	<h6><em><a href="./examples-java8.html">Java 8 Examples</a></em></h6>
-    <h6><em><a href="./examples-java7.html">Java 7 Examples</a></em></h6>
+	<h6><em><a href="./examples-java7.html">Java 7 Examples</a></em></h6>
+    <h6><em><a href="./examples-bgga.html">BGGA Examples</a></em></h6>
 
-	<p>These examples use the <a href="http://javac.info/">original "BGGA" Closure project</a> and have corresponding examples that use the <a href="./examples-java7.html">traditional Java syntax</a> in the Functional Java <a href="download.html">download</a>. The BGGA closure prototype is required to compile these examples, which can be downloaded from <a href="http://javac.info/">http://javac.info/</a>. Any JVM version 1.5 or higher is required to use the Functional Java library or run the compiled examples.</p>
-	
+    <p>
+        These examples use the Java 8 syntax and have corresponding examples that use <a href="./examples-java7.html">the traditional Java syntax</a> in the Functional Java <a href="download.html">download</a>.
+
 	<a name="Examples.list"></a>
 
         
@@ -87,7 +88,7 @@
 		<li><a href="#Option.map">Option map</a></li>
 	</ul>
 	<hr>
-	<a name="Array.exists"></a><h5> <a href="https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/Array_exists.java">Array exists &#x00A7;</a></h5>
+	<a name="Array.exists"></a><h5><a href="https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/Array_exists.java">Array exists &#x00A7;</a></h5>
 
 	<p>Checks for the existence of a String that has all lower case characters. In this case it is true (since, the case of &quot;what&quot;), but without this specific case, it is false. This example uses List.forall to test the characters of the String.</p>
 	
@@ -100,14 +101,14 @@ import static java.lang.Character.isLowerCase;
 public final class Array_exists {
   public static void main(final String[] args) {
     final Array&lt;String&gt; a = array(&quot;Hello&quot;, &quot;There&quot;, &quot;what&quot;, &quot;DAY&quot;, &quot;iS&quot;, &quot;iT&quot;);
-    final boolean b = a.exists({String s =&gt; fromString(s).forall({char c =&gt; isLowerCase(c)})});
+    final boolean b = a.exists(s -&gt; fromString(s).forall(isLowerCase));
     System.out.println(b); // true (&quot;what&quot; provides the only example; try removing it)
   }
 }
 </code></pre>
 
 	<hr>
-	<a name="Array.filter"></a><h5> <a href="https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/Array_filter.java">Array filter &#x00A7;</a></h5>
+	<a name="Array.filter"></a><h5><a href="https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/Array_filter.java">Array filter &#x00A7;</a></h5>
 
 	<p>Removes elements from an array that do not meet a certain criteria. In this case, we are using an array of integers and the filter removes any odd numbers.</p>
 <pre><code class="java">
@@ -119,13 +120,13 @@ import static fj.pre.Show.intShow;
 public final class Array_filter {
   public static void main(final String[] args) {
     final Array&lt;Integer&gt; a = array(97, 44, 67, 3, 22, 90, 1, 77, 98, 1078, 6, 64, 6, 79, 42);
-    final Array&lt;Integer&gt; b = a.filter({int i =&gt; i % 2 == 0});
+    final Array&lt;Integer&gt; b = a.filter(i -&gt; i % 2 == 0);
     arrayShow(intShow).println(b); // {44,22,90,98,1078,6,64,6,42}
   }
 }
 </code></pre>
 	<hr>
-	<a name="Array.foldLeft"></a><h5> <a href="https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/Array_foldLeft.java">Array foldLeft &#x00A7;</a></h5>
+	<a name="Array.foldLeft"></a><h5><a href="https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/Array_foldLeft.java">Array foldLeft &#x00A7;</a></h5>
 	
 	<p>Reduces the list applying a function per element. In this case, the fold sums the elements with a starting value of 0. Since 0 + 97 + 44 + 67 + 3 + 22 + 90 + 1 + 77 + 98 + 1078 + 6 + 64 + 6 + 79 + 42 == 1774 the result of the fold is 1774.</p>
 
@@ -136,7 +137,7 @@ import static fj.data.Array.array;
 public final class Array_foldLeft {
   public static void main(final String[] args) {
     final Array&lt;Integer&gt; a = array(97, 44, 67, 3, 22, 90, 1, 77, 98, 1078, 6, 64, 6, 79, 42);
-    final int b = a.&lt;Integer&gt;foldLeft({int i =&gt; {int j =&gt; i + j}}, 0);
+    final int b = a.&lt;Integer&gt;foldLeft(i -&gt; (j -&gt; i + j), 0);
     System.out.println(b); // 1774
   }
 }
@@ -156,7 +157,7 @@ import static java.lang.Character.isLowerCase;
 public final class Array_forall {
   public static void main(final String[] args) {
     final Array&lt;String&gt; a = array(&quot;hello&quot;, &quot;There&quot;, &quot;what&quot;, &quot;day&quot;, &quot;is&quot;, &quot;it&quot;);
-    final boolean b = a.forall({String s =&gt; fromString(s).forall({char c =&gt; isLowerCase(c)})});
+    final boolean b = a.forall(s -&gt; fromString(s).forall(isLowerCase));
     System.out.println(b); // false (&quot;There&quot; is a counter-example; try removing it)
   }
 }
@@ -176,7 +177,7 @@ import static fj.pre.Show.intShow;
 public final class Array_map {
   public static void main(final String[] args) {
     final Array&lt;Integer&gt; a = array(1, 2, 3);
-    final Array&lt;Integer&gt; b = a.map({int i =&gt; i + 42});
+    final Array&lt;Integer&gt; b = a.map(i -&gt; i + 42);
     arrayShow(intShow).println(b); // {43,44,45}
   }
 }
@@ -196,7 +197,7 @@ import static fj.pre.Show.listShow;
 public final class List_map {
   public static void main(final String[] args) {
     final List&lt;Integer&gt; a = list(1, 2, 3);
-    final List&lt;Integer&gt; b = a.map({int i =&gt; i + 42});
+    final List&lt;Integer&gt; b = a.map(i -&gt; i + 42);
     listShow(intShow).println(b); // [43,44,45]
   }
 }
@@ -220,9 +221,9 @@ public final class Option_bind {
     final Option&lt;Integer&gt; o1 = some(7);
     final Option&lt;Integer&gt; o2 = some(8);
     final Option&lt;Integer&gt; o3 = none();
-    final Option&lt;Integer&gt; p1 = o1.bind({int i =&gt; i % 2 == 0 ? some(i * 3) : Option.&lt;Integer&gt;none()});
-    final Option&lt;Integer&gt; p2 = o2.bind({int i =&gt; i % 2 == 0 ? some(i * 3) : Option.&lt;Integer&gt;none()});
-    final Option&lt;Integer&gt; p3 = o3.bind({int i =&gt; i % 2 == 0 ? some(i * 3) : Option.&lt;Integer&gt;none()});
+    final Option&lt;Integer&gt; p1 = o1.bind(i -&gt; i % 2 == 0 ? some(i * 3) : Option.&lt;Integer&gt;none());
+    final Option&lt;Integer&gt; p2 = o2.bind(i -&gt; i % 2 == 0 ? some(i * 3) : Option.&lt;Integer&gt;none());
+    final Option&lt;Integer&gt; p3 = o3.bind(i -&gt; i % 2 == 0 ? some(i * 3) : Option.&lt;Integer&gt;none());
     optionShow(intShow).println(p1); // None
     optionShow(intShow).println(p2); // Some(24)
     optionShow(intShow).println(p3); // None
@@ -248,9 +249,9 @@ public final class Option_filter {
     final Option&lt;Integer&gt; o1 = some(7);
     final Option&lt;Integer&gt; o2 = none();
     final Option&lt;Integer&gt; o3 = some(8);
-    final Option&lt;Integer&gt; p1 = o1.filter({int i =&gt; i % 2 == 0});
-    final Option&lt;Integer&gt; p2 = o2.filter({int i =&gt; i % 2 == 0});
-    final Option&lt;Integer&gt; p3 = o3.filter({int i =&gt; i % 2 == 0});
+    final Option&lt;Integer&gt; p1 = o1.filter(i -&gt; i % 2 == 0);
+    final Option&lt;Integer&gt; p2 = o2.filter(i -&gt; i % 2 == 0);
+    final Option&lt;Integer&gt; p3 = o3.filter(i -&gt; i % 2 == 0);
     optionShow(intShow).println(p1); // None
     optionShow(intShow).println(p2); // None
     optionShow(intShow).println(p3); // Some(8)
@@ -274,8 +275,8 @@ public final class Option_map {
   public static void main(final String[] args) {
     final Option&lt;Integer&gt; o1 = some(7);
     final Option&lt;Integer&gt; o2 = none();
-    final Option&lt;Integer&gt; p1 = o1.map({int i =&gt; i + 42});
-    final Option&lt;Integer&gt; p2 = o2.map({int i =&gt; i + 42});
+    final Option&lt;Integer&gt; p1 = o1.map(i -&gt; i + 42);
+    final Option&lt;Integer&gt; p2 = o2.map(i -&gt; i + 42);
     optionShow(intShow).println(p1); // Some(49)
     optionShow(intShow).println(p2); // None
   }
