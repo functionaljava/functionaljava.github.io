@@ -12,8 +12,7 @@ status=published
 
 ### Javadoc
 
-[Latest (4.1-SNAPSHOT)](https://functionaljava.ci.cloudbees.com/job/master/javadoc/)
-[4.0-SNAPSHOT](https://functionaljava.ci.cloudbees.com/job/4.0-SNAPSHOT/javadoc/)
+[Latest (4.2-SNAPSHOT)](https://functionaljava.ci.cloudbees.com/job/master/javadoc/)
 [3.2-SNAPSHOT](https://functionaljava.ci.cloudbees.com/job/3.x/javadoc/)
 [2.22](https://functionaljava.googlecode.com/svn/artifacts/2.22/javadoc/index.html)
 
