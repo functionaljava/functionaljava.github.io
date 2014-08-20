@@ -1,51 +1,28 @@
 
 buildscript {
     repositories {
-//        mavenLocal() // needed to use the local JBake 2.3.0 build
         jcenter()
+        mavenLocal()
+        maven {
+            url "https://oss.sonatype.org/content/groups/public"
+        }
     }
 
     dependencies {
-        classpath 'me.champeau.gradle:jbake-gradle-plugin:0.1'
-        classpath 'org.asciidoctor:asciidoctor-java-integration:0.1.4'
-        classpath 'org.freemarker:freemarker:2.3.19'
-        classpath "org.eclipse.jetty:jetty-server:8.1.15.v20140411"
-        classpath "org.pegdown:pegdown:1.4.2"
-        classpath "org.asciidoctor:asciidoctor-java-integration:0.1.4"
-        classpath "org.thymeleaf:thymeleaf:2.1.2.RELEASE"
-
+        classpath "me.champeau.gradle:jbake-gradle-plugin:0.2.1-SNAPSHOT"
     }
 }
 
-apply plugin: 'jbake'        
-
-task clean(type: Delete) {
-  delete "$projectDir/build"
-}
+apply plugin: 'me.champeau.jbake'
 
 repositories {
-	mavenCentral()
-}
-
-configurations {
-	server 
+	jcenter()
+    maven {
+        url "https://oss.sonatype.org/content/groups/public"
+    }
 }
 
 dependencies {
-	server "org.jbake:jbake-core:2.3.0"
-    server "org.eclipse.jetty:jetty-server:8.1.+"
-}
-
-task server(dependsOn: "jbake") << {
-    def outDir = "$buildDir/jbake"
-    println "outDir = $outDir"
-	org.jbake.launcher.Main.main(["-s", outDir] as String[])
-}
-
-task externalServer(type: JavaExec) {
-    main = "org.jbake.launcher.Main"
-	classpath configurations.server
-	args "-s"
 }
 
 task publish(type: GradleBuild) {
