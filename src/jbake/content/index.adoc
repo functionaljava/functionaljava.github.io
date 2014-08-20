@@ -1,0 +1,50 @@
+=
+Mark Perry
+2014-07-15
+:jbake-type: page
+:jbake-tags: groovy, monad, functional programming, functor, kind, higher-order type, typeclass, applicative
+:jbake-status: published
+
+image::/img/logo-600x144.png[]
+
+text 2
+
+Functional Java is an open source library that facilitates the use of functional programming with Java in production environments.  The library implements numerous basic and advanced programming abstractions that assist composition oriented development.
+
+Functional Java is compiled with Java 8 targeting Java 7 bytecode.  The use of lambdas are backported with the https://github.com/orfjackal/retrolambda[Retro Lambda] library.
+
+Functional Java also serves as a platform for learning functional programming concepts by introducing these concepts using a familiar language. The library is intended for use in production applications and is thoroughly tested using the technique of automated specification-based testing with http://www.scalacheck.org[ScalaCheck]
+
+Features:
+
+* Fully operational Actors for parallel computations (`fj.control.parallel`) and layered abstractions such as parallel-map, map-reduce, parallel-zip.
+* A package (`fj.data.fingertrees`) providing 2-3 finger trees for a functional representation of persistent sequences supporting access to the ends in amortized O(1) time.
+* Type-safe heterogeneous list (`fj.data.hlist`) for lists of elements of differing types without sacrificing type-safety.
+* Monadic parser combinators for writing parsers by combining smaller parsers using composition.
+* Conversion of data types to/from standard Java types.
+* Immutable, in-memory singly linked list (`fj.data.List`).
+* Immutable lazy singly linked list (`fj.data.Stream`).
+* Array wrapper (`fj.data.Array`).
+* Optional value &mdash; <em>type-safe null</em> (`fj.data.Option`).
+* Disjoint union data type &mdash; <em>compositional exception handling</em> (`fj.data.Either`).
+* Monoid (`fj.Monoid`).
+* Functions with arity 1 to 8.
+* Products of 1 to 8.
+* Configurable equality and hash-code for HashMap and HashSet.
+* Natural number data type (`fj.data.Natural`).
+* Immutable set implementation using a red/black tree.
+* Immutable multi-way tree &mdash; aka rose tree (`fj.data.Tree`).
+* Immutable tree-map using a red/black tree implementation (`fj.data.TreeMap`).
+* Zipper implementations for streams and trees.
+* Automated specification-based testing framework (`fj.test`).
+
+Functional Java includes usage examples, here is one such example (import statements omitted) that maps a transformation across an array by adding 42 to each element.
+
+
+[source,groovy,numbered]
+----
+final Array<Integer> a = array(1, 2, 3);
+final Array<Integer> b = a.map(i -&gt; i + 42);
+arrayShow(intShow).println(b); // {43,44,45}
+----
+

@@ -1,0 +1,5 @@
+= First Included Page
+:jbake-type: page
+:jbake-status: draft
+
+This is a first included page.
