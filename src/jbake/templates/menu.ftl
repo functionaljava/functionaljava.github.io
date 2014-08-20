@@ -9,7 +9,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="${config.site_context}">${config.site_title}</a>
+          <a class="navbar-brand" href="${config.site_context}"><img src="${config.site_context}img/white-lambda6.png" height="20"/>&nbsp;${config.site_title}</a>
         </div>
         
         <!-- Collect the nav links, forms, and other content for toggling -->
