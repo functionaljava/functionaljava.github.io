@@ -3,6 +3,7 @@
   <head>
     <title>
     Functional Java
+        - First Included Page
     </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,92 +63,12 @@
       <div class="row">
         <div class="col-md-12">
           <article>
-            <p><div class="imageblock">
-<div class="content">
-<img src="/img/logo-600x144.png" alt="logo 600x144">
-</div>
-</div>
+              <h2>First Included Page</h2>
+            <p><div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>Functional Java is an open source library that supports functional programming in Java.  The library implements numerous basic and advanced programming abstractions that assist composition oriented development.  Functional Java also serves as a platform for learning functional programming concepts by introducing these concepts using a familiar language.</p>
+<p>This is a first included page.</p>
 </div>
-<div class="paragraph">
-<p>The library is intended for use in production applications and is thoroughly tested using the technique of automated specification-based testing with <a href="http://www.scalacheck.org">ScalaCheck</a>.  Functional Java is compiled with Java 8 targeting Java 7 bytecode.  The use of lambdas within the project are backported with the <a href="https://github.com/orfjackal/retrolambda">Retro Lambda</a> library, supporting Java versions 5 to 8 and beyond.</p>
-</div>
-<div class="paragraph">
-<p>Features:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Fully operational Actors for parallel computations (<code>fj.control.parallel</code>) and layered abstractions such as parallel-map, map-reduce, parallel-zip.</p>
-</li>
-<li>
-<p>A package (<code>fj.data.fingertrees</code>) providing 2-3 finger trees for a functional representation of persistent sequences supporting access to the ends in amortized O(1) time.</p>
-</li>
-<li>
-<p>Type-safe heterogeneous list (<code>fj.data.hlist</code>) for lists of elements of differing types without sacrificing type-safety.</p>
-</li>
-<li>
-<p>Monadic parser combinators for writing parsers by combining smaller parsers using composition.</p>
-</li>
-<li>
-<p>Conversion of data types to/from standard Java types.</p>
-</li>
-<li>
-<p>Immutable, in-memory singly linked list (<code>fj.data.List</code>).</p>
-</li>
-<li>
-<p>Immutable lazy singly linked list (<code>fj.data.Stream</code>).</p>
-</li>
-<li>
-<p>Array wrapper (<code>fj.data.Array</code>).</p>
-</li>
-<li>
-<p>Optional value - <em>type-safe null</em> (<code>fj.data.Option</code>).</p>
-</li>
-<li>
-<p>Disjoint union data type - <em>compositional exception handling</em> (<code>fj.data.Either</code>).</p>
-</li>
-<li>
-<p>Monoid (<code>fj.Monoid</code>).</p>
-</li>
-<li>
-<p>Functions with arity 1 to 8.</p>
-</li>
-<li>
-<p>Products of 1 to 8.</p>
-</li>
-<li>
-<p>Configurable equality and hash-code for HashMap and HashSet.</p>
-</li>
-<li>
-<p>Natural number data type (<code>fj.data.Natural</code>).</p>
-</li>
-<li>
-<p>Immutable set implementation using a red/black tree.</p>
-</li>
-<li>
-<p>Immutable multi-way tree - aka rose tree (<code>fj.data.Tree</code>).</p>
-</li>
-<li>
-<p>Immutable tree-map using a red/black tree implementation (<code>fj.data.TreeMap</code>).</p>
-</li>
-<li>
-<p>Zipper implementations for streams and trees.</p>
-</li>
-<li>
-<p>Automated specification-based testing framework (<code>fj.test</code>).</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Functional Java includes usage examples, here is one such example (import statements omitted) that maps a transformation across an array by adding 42 to each element.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint linenums java language-java"><code>final Array&lt;Integer&gt; a = array(1, 2, 3);
-final Array&lt;Integer&gt; b = a.map(i -&gt; i + 42);
-arrayShow(intShow).println(b); // {43,44,45}</code></pre>
 </div>
 </div></p>
           </article>
