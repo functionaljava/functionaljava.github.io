@@ -1,0 +1,12 @@
+= Download
+:jbake-type: page
+:jbake-tags:
+:jbake-status: published
+
+The latest version of Functional Java is 4.2-SNAPSHOT.  The zip archives include the following:
+
+* https://github.com/functionaljava/functionaljava/tree/master/core/src/main/java/fj[Source code]
+* https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo[Demonstration code]
+* https://github.com/functionaljava/functionaljava/blob/master/etc/LICENCE[Software Licence (Open Source BSD)]
+* https://github.com/functionaljava/functionaljava/archive/master.zip[Download Zip (master branch)]
+
