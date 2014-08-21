@@ -9,7 +9,8 @@ buildscript {
     }
 
     dependencies {
-        classpath "me.champeau.gradle:jbake-gradle-plugin:0.2.1-SNAPSHOT"
+        classpath "com.github.mperry:jbake-gradle-plugin:0.2.1-SNAPSHOT"
+//        classpath "me.champeau.gradle:jbake-gradle-plugin:0.2.1-SNAPSHOT"
     }
 }
 
