@@ -1,0 +1,34 @@
+title=Community
+date=2014-08-21
+type=page
+status=published
+~~~~~~
+
+=== Articles
+Neal Ford features FunctionalJava in many of this posts on http://nealford.com/functionalthinking.html[Functional Thinking]
+
+=== Videos
+https://vimeo.com/44767789[What Does Functional Programming Mean?] by Tony Morris
+
+=== Repositories
+
+* https://github.com/functionaljava/functionaljava[Github repository]
+* https://github.com/functionaljava/functionaljava/issues?state=open[Github issues]
+
+=== Communication
+
+* http://groups.google.com/group/functionaljava[Mailing list via Google Groups]
+* mailto:functionaljava@googlegroups.com[Group email: functionaljava@googlegroups.com]
+* IRC Channel: #functionaljava
+
+=== Resources
+
+* https://functionaljava.ci.cloudbees.com[Cloudbees Cloud Build Machine]
+* http://mvnrepository.com/artifact/org.functionaljava[Maven Repository]
+* https://oss.sonatype.org/content/groups/public/org/functionaljava[Sonatype Repository]
+
+=== Obsolete
+
+* https://code.google.com/p/functionaljava/issues/list[Old issue repository]
+* https://code.google.com/p/functionaljava/[Old Google Code Hosting]
+* https://code.google.com/p/functionaljavaweb/[Old Website Repository]
