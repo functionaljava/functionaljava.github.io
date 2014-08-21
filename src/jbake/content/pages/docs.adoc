@@ -14,6 +14,11 @@ Numerous examples for using FunctionalJava:
 * link:examples-java7.html[Examples (Java 7 Syntax)]
 * link:examples-bgga.html[Examples (Obsolete BGGA Proposal Syntax)]
 
+=== Release Notes
+
+https://github.com/functionaljava/functionaljava/blob/master/etc/release-notes.md[Release notes] are available on the Github site.
+
+
 === Javadoc
 
 * https://functionaljava.ci.cloudbees.com/job/master/javadoc/[Latest (4.2-beta-2-SNAPSHOT)]
