@@ -4,7 +4,9 @@
       <div class="row">
         <div class="col-md-12">
           <article>
-            <h2>${content.title}</h2>
+          <#if (content.title)??>
+              <h2>${content.title}</h2>
+          </#if>
             <p>${content.body}</p>
           </article>
         </div> <!-- /.col-md-12 -->
