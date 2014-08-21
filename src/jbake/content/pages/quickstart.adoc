@@ -1,0 +1,62 @@
+= Quickstart
+:jbake-type: page
+:jbake-tags:
+:jbake-status: published
+
+The latest stable version as at Aug 2014 is `4.2-beta-1`.  Here is how to quickly add the library to your project and get started.
+
+The Functional Java artifact is published to Maven Central using the group `org.functionaljava` with two published artifacts:
+
+* the core library (`functionaljava`)
+* Java 8 specific support (`functionaljava-java8`)
+
+
+
+== Gradle
+
+To add Functional Java to your Gradle project, add the following snippet to the _dependencies_ section of your `build.gradle` file.
+
+----
+compile "org.functionaljava:functionaljava:4.2-beta-1"
+compile "org.functionaljava:functionaljava-java8:4.2-beta-1"
+----
+
+== Maven
+
+Add the following dependencies.
+
+----
+<dependency>
+    <groupId>org.functionaljava</groupId>
+    <artifactId>functionaljava</artifactId>
+    <version>4.2-beta-1</version>
+</dependency>
+<dependency>
+    <groupId>org.functionaljava</groupId>
+    <artifactId>functionaljava-java8</artifactId>
+    <version>4.2-beta-1</version>
+</dependency>
+
+----
+
+== First Code Example
+
+We can easily map over a list to apply the same function to each element in the list and print the resulting list.  Note that this uses the list `fj.data.List`.
+
+[source,java]
+----
+import static fj.data.List.list;
+import fj.data.List;
+import static fj.pre.Show.intShow;
+import static fj.pre.Show.listShow;
+
+public final class ListMapExample {
+    public static void main(final String[] args) {
+        final List<Integer> a = list(1, 2, 3).map(i -> i + 42);
+        listShow(intShow).println(a); // [43,44,45]
+
+        // combined into a single line
+        listShow(intShow).println(list(1, 2, 3).map(i -> i + 42)); // [43,44,45]
+    }
+}
+----

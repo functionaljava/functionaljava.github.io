@@ -1,5 +1,0 @@
-= Second Included Page
-:jbake-type: page
-:jbake-status: published
-
-This is a second included page.
