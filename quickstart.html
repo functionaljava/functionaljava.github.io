@@ -3,6 +3,7 @@
   <head>
     <title>
     Functional Java
+        - Quickstart
     </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,58 +63,87 @@
       <div class="row">
         <div class="col-md-12">
           <article>
-            <p><div class="imageblock">
-<div class="content">
-<img src="/img/logo-600x144.png" alt="logo 600x144">
-</div>
-</div>
-<div class="sect2">
-<h3 id="_overview">Overview</h3>
+              <h2>Quickstart</h2>
+            <p><div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>Functional Java is an open source library facilitating functional programming in Java.  The library implements numerous basic and advanced programming abstractions that assist composition oriented development.  Functional Java also serves as a platform for learning functional programming concepts by introducing these concepts using a familiar language.</p>
+<p>The latest stable version as at Aug 2014 is <code>4.2-beta-1</code>.  Here is how to quickly add the library to your project and get started.</p>
 </div>
 <div class="paragraph">
-<p>The library is intended for use in production applications and is thoroughly tested using the technique of automated specification-based testing with <a href="http://www.scalacheck.org">ScalaCheck</a>.  Functional Java is compiled with Java 8 targeting Java 7 bytecode.  The use of lambdas within the project are backported with the <a href="https://github.com/orfjackal/retrolambda">Retro Lambda</a> library, supporting Java versions 5 to 8 and beyond.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_features">Features</h3>
-<div class="paragraph">
-<p>Functional Java provides abstractions for the following types:</p>
+<p>The Functional Java artifact is published to Maven Central using the group <code>org.functionaljava</code> with two published artifacts:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Basic Data Structures - total and partial functions, products, unit, option, unbiased and right biased unions (either and validation).</p>
+<p>the core library (<code>functionaljava</code>)</p>
 </li>
 <li>
-<p>Immutable Collections - array, list, vector, stream, set, map, finger tree, heterogenous list.</p>
-</li>
-<li>
-<p>Other Abstractions - monoid, semigroup, natural, random number generator, reader, writer, state, input/output, parser, zipper, specification based testing, actors, concurrency and type conversion.</p>
+<p>Java 8 specific support (<code>functionaljava-java8</code>)</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>See the <a href="features.html">features page</a> for a brief description of each of these types.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_example">Example</h3>
+<div class="sect1">
+<h2 id="_gradle">Gradle</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Read the <a href="quickstart.html">quick start guide</a> for how to add FunctionalJava to your project and get started with a full example.</p>
-</div>
-<div class="paragraph">
-<p>Functional Java includes numerous usage examples, this example maps a function over an array, adding 42 to each element (imports omitted).</p>
+<p>To add Functional Java to your Gradle project, add the following snippet to the <em>dependencies</em> section of your <code>build.gradle</code> file.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint java language-java"><code>final Array&lt;Integer&gt; a = array(1, 2, 3);
-final Array&lt;Integer&gt; b = a.map(i -&gt; i + 42);
-arrayShow(intShow).println(b); // {43,44,45}
+<pre>compile "org.functionaljava:functionaljava:4.2-beta-1"
+compile "org.functionaljava:functionaljava-java8:4.2-beta-1"</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_maven">Maven</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Add the following dependencies.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&lt;dependency&gt;
+    &lt;groupId&gt;org.functionaljava&lt;/groupId&gt;
+    &lt;artifactId&gt;functionaljava&lt;/artifactId&gt;
+    &lt;version&gt;4.2-beta-1&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.functionaljava&lt;/groupId&gt;
+    &lt;artifactId&gt;functionaljava-java8&lt;/artifactId&gt;
+    &lt;version&gt;4.2-beta-1&lt;/version&gt;
+&lt;/dependency&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_first_code_example">First Code Example</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We can easily map over a list to apply the same function to each element in the list and print the resulting list.  Note that this uses the list <code>fj.data.List</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint java language-java"><code>import static fj.data.List.list;
+import fj.data.List;
+import static fj.pre.Show.intShow;
+import static fj.pre.Show.listShow;
 
-// combine into a single step
-arrayShow(intShow).println(array(1, 2, 3).map(i -&gt; i + 42));</code></pre>
+public final class ListMapExample {
+    public static void main(final String[] args) {
+        final List&lt;Integer&gt; a = list(1, 2, 3).map(i -&gt; i + 42);
+        listShow(intShow).println(a); // [43,44,45]
+
+        // combined into a single line
+        listShow(intShow).println(list(1, 2, 3).map(i -&gt; i + 42)); // [43,44,45]
+    }
+}</code></pre>
+</div>
 </div>
 </div>
 </div></p>
