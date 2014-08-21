@@ -5,7 +5,7 @@ status=published
 ~~~~~~
 
 === Articles
-Neal Ford features FunctionalJava in many of this posts on http://nealford.com/functionalthinking.html[Functional Thinking]
+Neal Ford features FunctionalJava in many of his posts on http://nealford.com/functionalthinking.html[Functional Thinking]
 
 === Videos
 https://vimeo.com/44767789[What Does Functional Programming Mean?] by Tony Morris

@@ -1,0 +1,38 @@
+= Features
+:jbake-type: page
+:jbake-tags:
+:jbake-status: published
+
+Functional Java provides abstractions for the following types:
+
+* Basic Data Structures
+** Functions with arity 1 to 8 (`fj.F`).
+** Functions with arity 0 to 8 that can produce exceptions (`fj.TryCatch`).
+** Products with arity 1 to 8 (`fj.P`).
+** Unit type (`fj.Unit`).
+** Optional value - _type-safe null_ (`fj.data.Option`).
+** Disjoint union data type - _compositional exception handling_ (`fj.data.Either`).
+** Validation - _right biased_ compositional exception handling (`fj.data.Validation`).
+* Immutable Collections
+** Array wrapper (`fj.data.Array`).
+** Immutable, in-memory singly linked list (`fj.data.List`).
+** Immutable lazy singly linked list (`fj.data.Stream`).
+** A package (`fj.data.fingertrees`) providing 2-3 finger trees for a functional representation of persistent sequences, supporting access to the ends in amortized O(1) time.
+** Type-safe heterogeneous list (`fj.data.hlist`) for lists of elements of differing types without sacrificing type-safety.
+** Immutable set implementation using a red/black tree (`fj.data.Set`).
+** Immutable multi-way tree - aka rose tree (`fj.data.Tree`).
+** Immutable tree-map using a red/black tree implementation (`fj.data.TreeMap`).
+* Other
+** Monoid (`fj.Monoid`).
+** Semigroup (`fj.Semigroup`).
+** Natural number data type (`fj.data.Natural`).
+** Random number generator using a _linear congruential generator_ (`fj.LcgRng`).
+** Reader, Writer and State monads (`fj.data.Reader`,`fj.data.Writer`, `fj.data.State`).
+** Input/Output monad for abstracting IO (`fj.IO`).
+** Monadic parser combinators for writing parsers by combining smaller parsers using composition.
+** Conversion of data types to/from standard Java types.
+** Conversion between FunctionalJava and Java 8 specific types.
+** Configurable equality and hash-code for HashMap and HashSet.
+** Zipper implementations for streams and trees.
+** Automated specification-based testing framework (`fj.test`).
+** Fully operational Actors for parallel computations (`fj.control.parallel`) and layered abstractions such as parallel-map, map-reduce, parallel-zip.
