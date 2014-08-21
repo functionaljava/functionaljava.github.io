@@ -18,11 +18,11 @@ Functional Java provides abstractions for the following types:
 * Immutable Collections - array, list, vector, stream, set, map, finger tree, heterogenous list.
 * Other Abstractions - monoid, semigroup, natural, random number generator, reader, writer, state, input/output, parser, zipper, specification based testing, actors, concurrency and type conversion.
 
-See the link:pages/features.html[features page] for a brief description of each of these types.
+See the link:features.html[features page] for a brief description of each of these types.
 
 === Example
 
-Read the link:pages/quickstart.html[quick start guide] for how to add FunctionalJava to your project and get started with a full example.
+Read the link:quickstart.html[quick start guide] for how to add FunctionalJava to your project and get started with a full example.
 
 Functional Java includes numerous usage examples, this example maps a function over an array, adding 42 to each element (imports omitted).
 

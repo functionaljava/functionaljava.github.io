@@ -15,9 +15,9 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-			<li><a href="${config.site_context}pages/docs.html">Docs</a></li>
-			<li><a href="${config.site_context}pages/community.html">Community</a></li>
-			<li><a href="${config.site_context}pages/download.html">Download</a></li>
+			<li><a href="${config.site_context}docs.html">Docs</a></li>
+			<li><a href="${config.site_context}community.html">Community</a></li>
+			<li><a href="${config.site_context}download.html">Download</a></li>
           </ul>
         
         <!-- Right navigation -->
