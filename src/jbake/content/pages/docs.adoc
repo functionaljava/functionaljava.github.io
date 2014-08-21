@@ -1,0 +1,24 @@
+= Documentation
+:jbake-type: page
+:jbake-tags:
+:jbake-status: published
+
+=== Learn
+
+link:quickstart.html[Quickstart Guide] - How to include Functional Java in your project and get started
+
+=== Examples
+Numerous examples for using FunctionalJava:
+
+* link:examples-java8.html[Examples (Java 8 Syntax)]
+* link:examples-java7.html[Examples (Java 7 Syntax)]
+* link:examples-bgga.html[Examples (Obsolete BGGA Proposal Syntax)]
+
+=== Javadoc
+
+* https://functionaljava.ci.cloudbees.com/job/master/javadoc/[Latest (4.2-beta-2-SNAPSHOT)]
+* https://functionaljava.ci.cloudbees.com/job/3.x/javadoc/[Latest 3.x]
+* https://functionaljava.googlecode.com/svn/artifacts/3.0/javadoc/index.html[3.0]
+* https://functionaljava.googlecode.com/svn/artifacts/2.22/javadoc/index.html[2.22]
+
+
