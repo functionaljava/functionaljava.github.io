@@ -1,16 +1,20 @@
-= Java 8 Examples
-:jbake-type: page
-:jbake-tags:
-:jbake-status: published
+title=Java 8 Examples
+date=2014-06-01
+type=page
+status=published
+~~~~~~
 
-These examples use the Java 8 syntax.  There are corresponding examples that use:
+<div>
 
-* the link:examples-java7.html[old Java 7 and below syntax].
-* original obsolete link:examples-bgga.html[BGGA lambda proposal].
+	<h6><em><a href="./examples-java7.html">Java 7 Examples</a></em></h6>
+    <h6><em><a href="./examples-bgga.html">BGGA Examples</a></em></h6>
+
+    <p>
+        These examples use the Java 8 syntax and have corresponding examples that use <a href="./examples-java7.html">the traditional Java syntax</a> in the Functional Java <a href="download.html">download</a>.
 
 	<a name="Examples.list"></a>
 
-        
+
 	<ul>
 		<li><a href="#Array.exists">Array exists</a></li>
 		<li><a href="#Array.filter">Array filter</a></li>
@@ -26,7 +30,7 @@ These examples use the Java 8 syntax.  There are corresponding examples that use
 	<a name="Array.exists"></a><h5><a href="https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/Array_exists.java">Array exists &#x00A7;</a></h5>
 
 	<p>Checks for the existence of a String that has all lower case characters. In this case it is true (since, the case of &quot;what&quot;), but without this specific case, it is false. This example uses List.forall to test the characters of the String.</p>
-	
+
 <pre><code class="java">
 import fj.data.Array;
 import static fj.data.Array.array;
@@ -62,7 +66,7 @@ public final class Array_filter {
 </code></pre>
 	<hr>
 	<a name="Array.foldLeft"></a><h5><a href="https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/Array_foldLeft.java">Array foldLeft &#x00A7;</a></h5>
-	
+
 	<p>Reduces the list applying a function per element. In this case, the fold sums the elements with a starting value of 0. Since 0 + 97 + 44 + 67 + 3 + 22 + 90 + 1 + 77 + 98 + 1078 + 6 + 64 + 6 + 79 + 42 == 1774 the result of the fold is 1774.</p>
 
 <pre><code class="java">
@@ -77,10 +81,10 @@ public final class Array_foldLeft {
   }
 }
 </code></pre>
-            
+
 	<hr>
 	<a name="Array.forall"></a><h5> <a href="https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/Array_forall.java">Array forall &#x00A7;</a></h5>
-	
+
 	<p>Checks that all Strings in the array have lower case characters. In this case, the check fails because of the case of &quot;There&quot;, however, the removal of this case produces a result of true.</p>
 
 <pre><code class="java">
@@ -97,10 +101,10 @@ public final class Array_forall {
   }
 }
 </code></pre>
-            
+
 	<hr>
 	<a name="Array.map"></a><h5> <a href="https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/Array_map.java">Array map &#x00A7;</a> </h5>
-	
+
 	<p>Maps a function across the array of integers. In this case, the function adds 42 to each element of the array to produce a new array.</p>
 
 <pre><code class="java">
@@ -120,7 +124,7 @@ public final class Array_map {
 
 	<hr>
 	<a name="List.map"></a><h5> <a href="https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/List_map.java">List map &#x00A7;</a></h5>
-	
+
 	<p>Maps a function across a list of integers. This is similar to the Array map. This example adds 42 to each element of the list to produce a new list.</p>
 
 <pre><code class="java">
@@ -137,11 +141,11 @@ public final class List_map {
   }
 }
 </code></pre>
-            
+
 	<hr>
 	<a name="Option.bind"></a><h5> <a href="https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/Option_bind.java">Option bind &#x00A7;</a></h5>
 
-            
+
 	<p>Binds a function across the optional value type. The function checks if the contained value is even and if it is multiples that value by 3 and returns that new value. If the contained value is odd (or if there is no value), then no value is returned (none).</p>
 
 <pre><code class="java">
@@ -165,11 +169,11 @@ public final class Option_bind {
   }
 }
 </code></pre>
-            
+
 	<hr>
 	<a name="Option.filter"></a><h5> <a href="https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/Option_filter.java">Option filter &#x00A7;</a></h5>
 
-            
+
 	<p>Removes the value from the optional value if it does not match a given predicate. In this case the condition for preservation is that the contained value is an even number.</p>
 
 <pre><code class="java">
@@ -193,10 +197,10 @@ public final class Option_filter {
   }
 }
 </code></pre>
-            
+
 	<hr>
 	<a name="Option.map"></a><h5> <a href="https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/Option_map.java">Option map &#x00A7;</a></h5>
-	
+
 	<p>Maps a function across the optional value type. The function adds 42 to any contained value.</p>
 
 <pre><code class="java">
@@ -218,5 +222,5 @@ public final class Option_map {
 }
 </code></pre>
 
-    
+
 </div>
