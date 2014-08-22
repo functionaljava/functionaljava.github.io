@@ -19,7 +19,7 @@ The example list is:
 * <<hlistAppend, HList append>>
 * <<hlistFoldRight, HList fold right>>
 
-=== Array Exists [[arrayExists]]
+== Array Exists [[arrayExists]]
 
 https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/Array_exists.java[Source code]
 
@@ -46,7 +46,7 @@ public final class Array_exists {
 }
 ----
 
-=== Array Filter [[arrayFilter]]
+== Array Filter [[arrayFilter]]
 
 https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/Array_filter.java[Source code]
 
@@ -69,7 +69,7 @@ public final class Array_filter {
 }
 ----
 
-=== Array FoldLeft [[arrayFoldLeft]]
+== Array FoldLeft [[arrayFoldLeft]]
 https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/Array_foldLeft.java[Source code]
 
 Reduces the list applying a function per element. In this case, the fold sums the elements with a starting value of 0. Since 0 + 97 + 44 + 67 + 3 + 22 + 90 + 1 + 77 + 98 + 1078 + 6 + 64 + 6 + 79 + 42 == 1774 the result of the fold is 1774.
@@ -89,7 +89,7 @@ public final class Array_foldLeft {
 }
 ----
 
-=== Array Forall [[arrayForall]]
+== Array Forall [[arrayForall]]
 https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/Array_forall.java[Source code]
 
 Checks that all Strings in the array have lower case characters. In this case, the check fails because of the case of "There", however, the removal of this case produces a result of true.
@@ -115,7 +115,7 @@ public final class Array_forall {
 }
 ----
 
-=== Array map [[arrayMap]]
+== Array map [[arrayMap]]
 
 Maps a function across the array of integers. In this case, the function adds 42 to each element of the array to produce a new array.
 
@@ -136,7 +136,7 @@ public final class Array_map {
 }
 ----
 
-=== List map [[listMap]]
+== List map [[listMap]]
 https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/List_map.java[Source code]
 
 Maps a function across a list of integers. This is similar to the Array map. This example adds 42 to each element of the list to produce a new list.
@@ -158,7 +158,7 @@ public final class List_map {
 }
 ----
 
-=== List sort [[listSort]]
+== List sort [[listSort]]
 https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/List_sort.java[Source code]
 
 [source,java]
@@ -178,7 +178,7 @@ public final class List_sort {
 }
 ----
 
-=== Option Bind [[optionBind]]
+== Option Bind [[optionBind]]
 
 https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/Option_bind.java[[Source code]]
 
@@ -220,7 +220,7 @@ public final class Option_bind {
 }
 ----
 
-=== Option Filter [[optionFilter]]
+== Option Filter [[optionFilter]]
 
 https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/Option_filter.java[[Source code]]
 
@@ -250,7 +250,7 @@ public final class Option_filter {
 }
 ----
 
-=== Option map [[optionMap]]
+== Option map [[optionMap]]
 https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/Option_map.java[Option map]
 
 Maps a function across the optional value type. The function adds 42 to any contained value.
@@ -276,7 +276,7 @@ public final class Option_map {
 }
 ----
 
-=== HList append [[hlistAppend]]
+== HList append [[hlistAppend]]
 
 https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/HList_append.java"[Source code]
 
@@ -325,7 +325,7 @@ public class HList_append {
 ----
 
 
-=== HList foldRight [[hlistFoldRight]]
+== HList foldRight [[hlistFoldRight]]
 
 https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/HList_foldRight.java"[Source code]
 

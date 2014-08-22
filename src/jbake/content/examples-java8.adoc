@@ -17,7 +17,7 @@ The example list is:
 * <<optionFilter, Option filter>>
 * <<optionMap, Option map>>
 
-=== Array Exists [[arrayExists]]
+== Array Exists [[arrayExists]]
 
 https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/Array_exists.java[Github Source]
 
@@ -40,7 +40,7 @@ public final class Array_exists {
 }
 ----
 
-=== Array Filter [[arrayFilter]]
+== Array Filter [[arrayFilter]]
 https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/Array_filter.java[Github Source]
 
 Removes elements from an array that do not meet a certain criteria. In this case, we are using an array of integers and the filter removes any odd numbers.
@@ -61,7 +61,7 @@ public final class Array_filter {
 }
 ----
 
-=== Array Fold Left [[arrayFoldLeft]]
+== Array Fold Left [[arrayFoldLeft]]
 https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/Array_foldLeft.java[Github Source]
 
 Reduces the list applying a function per element. In this case, the fold sums the elements with a starting value of 0. Since 0 + 97 + 44 + 67 + 3 + 22 + 90 + 1 + 77 + 98 + 1078 + 6 + 64 + 6 + 79 + 42 == 1774 the result of the fold is 1774.
@@ -80,7 +80,7 @@ public final class Array_foldLeft {
 }
 ----
 
-=== Array For All [[arrayForall]]
+== Array For All [[arrayForall]]
 
 https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/Array_forall.java[Github Source]
 
@@ -102,7 +102,7 @@ public final class Array_forall {
 }
 ----
 
-=== Array Map [[arrayMap]]
+== Array Map [[arrayMap]]
 https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/Array_map.java[Github Source]
 
 Maps a function across the array of integers. In this case, the function adds 42 to each element of the array to produce a new array.</p>
@@ -123,7 +123,7 @@ public final class Array_map {
 }
 ----
 
-=== List Map [[listMap]]
+== List Map [[listMap]]
 https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/List_map.java[Github Source]
 
 Maps a function across a list of integers. This is similar to the Array map. This example adds 42 to each element of the list to produce a new list.
@@ -144,7 +144,7 @@ public final class List_map {
 }
 ----
 
-=== Option Bind [[optionBind]]
+== Option Bind [[optionBind]]
 
 https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/Option_bind.java[Github Source]
 
@@ -174,7 +174,7 @@ public final class Option_bind {
 ----
 
 [[optionFilter]]
-=== Option filter
+== Option filter
 
 https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/Option_filter.java[Github Source]
 
@@ -204,7 +204,7 @@ public final class Option_filter {
 }
 ----
 
-=== Option Map [[optionMap]]
+== Option Map [[optionMap]]
 https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/Option_map.java[Github Source]
 
 Maps a function across the optional value type. The function adds 42 to any contained value.
