@@ -5,14 +5,15 @@
 
 === Learn
 
-link:quickstart.html[Quickstart Guide] - How to include Functional Java in your project and get started
+* link:quickstart.html[Quickstart Guide] - How to include Functional Java in your project and get started
+* link:features.html[Features List] - Brief overview of Functional Java features
 
 === Examples
-Numerous examples for using FunctionalJava:
+There are numerous examples of using FunctionalJava:
 
-* link:examples-java8.html[Examples (Java 8 Syntax)]
-* link:examples-java7.html[Examples (Java 7 Syntax)]
-* link:examples-bgga.html[Examples (Obsolete BGGA Proposal Syntax)]
+* link:examples-java8.html[Java 8 Examples]
+* link:examples-java7.html[Java 7 Examples]
+* link:examples-bgga.html[Obsolete BGGA Proposal Examples]
 
 === Release Notes
 
