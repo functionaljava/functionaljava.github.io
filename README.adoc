@@ -1,11 +1,22 @@
 
 = Functional Java Website
 
+image::http://www.functionaljava.org/img/logo-600x144.png[]
+
 This is the code repository for the Functional Java website which is available at http://www.functionaljava.org/.
 
 The Functional Java code repository is at https://github.com/functionaljava/functionaljava.
 
-The website uses JBake 2.3.1 and Gradle 2.0.  The source code of the website is currently in the `gradle` branch.  Useful gradle targets are:
+== Lifecycle
+
+The process for changing or enhancing the site is:
+
+* edit the source code in the `gradle` branch
+* generate the website
+* view the changes on a local server
+* publish the generated pages to Github
+
+The website uses Gradle 2.0 to build, generate and publish the site and depends on JBake 2.3.1  The project uses the Gradle wrapper, so it can be run if Gradle is not installed using the `./gradlew` command.  Useful gradle targets are:
 
 * jbakeClean - Removes all generated files
 * jbake - create the website locally
