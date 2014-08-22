@@ -64,39 +64,53 @@
         <div class="col-md-12">
           <article>
               <h2>Documentation</h2>
-            <p><div class="sect2">
-<h3 id="_learn">Learn</h3>
-<div class="paragraph">
-<p><a href="quickstart.html">Quickstart Guide</a> - How to include Functional Java in your project and get started</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_examples">Examples</h3>
-<div class="paragraph">
-<p>Numerous examples for using FunctionalJava:</p>
-</div>
+            <p><div class="sect1">
+<h2 id="_learn">Learn</h2>
+<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><a href="examples-java8.html">Examples (Java 8 Syntax)</a></p>
+<p><a href="quickstart.html">Quickstart Guide</a> - How to include Functional Java in your project and get started</p>
 </li>
 <li>
-<p><a href="examples-java7.html">Examples (Java 7 Syntax)</a></p>
-</li>
-<li>
-<p><a href="examples-bgga.html">Examples (Obsolete BGGA Proposal Syntax)</a></p>
+<p><a href="features.html">Features List</a> - Brief overview of Functional Java features</p>
 </li>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_release_notes">Release Notes</h3>
+</div>
+<div class="sect1">
+<h2 id="_examples">Examples</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are numerous examples of using FunctionalJava:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="examples-java8.html">Java 8 Examples</a></p>
+</li>
+<li>
+<p><a href="examples-java7.html">Java 7 Examples</a></p>
+</li>
+<li>
+<p><a href="examples-bgga.html">Obsolete BGGA Proposal Examples</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_release_notes">Release Notes</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p><a href="https://github.com/functionaljava/functionaljava/blob/master/etc/release-notes.md">Release notes</a> are available on the Github site.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_javadoc">Javadoc</h3>
+</div>
+<div class="sect1">
+<h2 id="_javadoc">Javadoc</h2>
+<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
@@ -112,6 +126,34 @@
 <p><a href="https://functionaljava.googlecode.com/svn/artifacts/2.22/javadoc/index.html">2.22</a></p>
 </li>
 </ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_building">Building</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>FunctionalJava uses the Retro Lambda project to backport Java 8 lambdas to Java 7 bytecode.  This requires access to both JDK 7 and 8.  The build system requires the environment variables <code>JAVA7_HOME</code> and <code>JAVA8_HOME</code> to refer to the appropriate directories.</p>
+</div>
+<div class="paragraph">
+<p>Building is done using Gradle 2.0.  In the root directory run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>./gradlew</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This will download the Gradle build tool and necessary dependencies and build FunctionalJava.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_license">License</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="http://github.com/functionaljava/functionaljava/blob/master/etc/LICENCE">Functional Java is licensed</a> under the BSD 3 license, available at  (3-clause license, <a href="https://en.wikipedia.org/wiki/BSD_licenses">https://en.wikipedia.org/wiki/BSD_licenses</a>).</p>
+</div>
 </div>
 </div></p>
           </article>
