@@ -14,7 +14,7 @@
       <item>
         <title><#escape x as x?xml>${post.title}</#escape></title>
         <author>${config.meta_author}</author>
-        <link>http://${config.site_host}${post.uri}</link>
+        <link>http://${config.site_host}/${post.uri}</link>
         <pubDate>${post.date?datetime?string.medium}</pubDate>
         <guid isPermaLink="false">${post.uri}</guid>
         <description>
