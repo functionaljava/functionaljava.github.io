@@ -56,8 +56,8 @@ Removes elements from an array that do not meet a certain criteria. In this case
 ----
 import fj.data.Array;
 import static fj.data.Array.array;
-import static fj.pre.Show.arrayShow;
-import static fj.pre.Show.intShow;
+import static fj.Show.arrayShow;
+import static fj.Show.intShow;
 import static fj.function.Integers.even;
 
 public final class Array_filter {
@@ -124,8 +124,8 @@ Maps a function across the array of integers. In this case, the function adds 42
 import fj.data.Array;
 import static fj.data.Array.array;
 import static fj.function.Integers.add;
-import static fj.pre.Show.arrayShow;
-import static fj.pre.Show.intShow;
+import static fj.Show.arrayShow;
+import static fj.Show.intShow;
 
 public final class Array_map {
   public static void main(final String[] args) {
@@ -146,8 +146,8 @@ Maps a function across a list of integers. This is similar to the Array map. Thi
 import fj.data.List;
 import static fj.data.List.list;
 import static fj.function.Integers.add;
-import static fj.pre.Show.intShow;
-import static fj.pre.Show.listShow;
+import static fj.Show.intShow;
+import static fj.Show.listShow;
 
 public final class List_map {
   public static void main(final String[] args) {
@@ -165,9 +165,9 @@ https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/
 ----
 import fj.data.List;
 import static fj.data.List.list;
-import static fj.pre.Ord.intOrd;
-import static fj.pre.Show.intShow;
-import static fj.pre.Show.listShow;
+import static fj.Ord.intOrd;
+import static fj.Show.intShow;
+import static fj.Show.listShow;
 
 public final class List_sort {
   public static void main(final String[] args) {
@@ -190,8 +190,8 @@ import fj.F;
 import fj.data.Option;
 import static fj.data.Option.none;
 import static fj.data.Option.some;
-import static fj.pre.Show.intShow;
-import static fj.pre.Show.optionShow;
+import static fj.Show.intShow;
+import static fj.Show.optionShow;
 
 public final class Option_bind {
   public static void main(final String[] args) {
@@ -232,8 +232,8 @@ import fj.data.Option;
 import static fj.data.Option.none;
 import static fj.data.Option.some;
 import static fj.function.Integers.even;
-import static fj.pre.Show.intShow;
-import static fj.pre.Show.optionShow;
+import static fj.Show.intShow;
+import static fj.Show.optionShow;
 
 public final class Option_filter {
   public static void main(final String[] args) {
@@ -261,8 +261,8 @@ import fj.data.Option;
 import static fj.data.Option.none;
 import static fj.data.Option.some;
 import static fj.function.Integers.add;
-import static fj.pre.Show.intShow;
-import static fj.pre.Show.optionShow;
+import static fj.Show.intShow;
+import static fj.Show.optionShow;
 
 public final class Option_map {
   public static void main(final String[] args) {
