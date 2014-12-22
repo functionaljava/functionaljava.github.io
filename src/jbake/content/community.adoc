@@ -18,7 +18,7 @@ https://vimeo.com/44767789[What Does Functional Programming Mean?] by Tony Morri
 
 * http://groups.google.com/group/functionaljava[Mailing list via Google Groups]
 * mailto:functionaljava@googlegroups.com[Group email: functionaljava@googlegroups.com]
-* IRC Channel: #functionaljava
+* IRC Channel: irc://irc.freenode.net/#functionaljava[#functionaljava]
 
 == Resources
 
