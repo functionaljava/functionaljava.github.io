@@ -21,8 +21,14 @@ https://github.com/functionaljava/functionaljava/blob/master/etc/release-notes.m
 
 == Javadoc
 
-* https://functionaljava.ci.cloudbees.com/job/master/javadoc/[Latest (4.2-beta-2-SNAPSHOT)]
-* https://functionaljava.ci.cloudbees.com/job/3.x/javadoc/[Latest 3.x]
+* https://functionaljava.ci.cloudbees.com/job/master/javadoc/[Latest 4.x (currently 4.3-SNAPSHOT)]
+* http://www.functionaljava.org/javadoc/4.2/functionaljava/index.html[4.2 - functionaljava]
+* http://www.functionaljava.org/javadoc/4.2/functionaljava-java8/index.html[4.2 - functionaljava-java8]
+* http://www.functionaljava.org/javadoc/4.1/index.html[4.1]
+* http://www.functionaljava.org/javadoc/4.0/index.html[4.0]
+* https://functionaljava.ci.cloudbees.com/job/3.x/javadoc/[Latest 3.x (currently 3.3-SNAPSHOT)]
+* http://www.functionaljava.org/javadoc/3.2/index.html[3.2]
+* http://www.functionaljava.org/javadoc/3.1/index.html[3.1]
 * https://functionaljava.googlecode.com/svn/artifacts/3.0/javadoc/index.html[3.0]
 * https://functionaljava.googlecode.com/svn/artifacts/2.22/javadoc/index.html[2.22]
 
@@ -30,7 +36,7 @@ https://github.com/functionaljava/functionaljava/blob/master/etc/release-notes.m
 
 FunctionalJava uses the Retro Lambda project to backport Java 8 lambdas to Java 7 bytecode.  This requires access to both JDK 7 and 8.  The build system requires the environment variables `JAVA7_HOME` and `JAVA8_HOME` to refer to the appropriate directories.
 
-Building is done using Gradle 2.0.  In the root directory run:
+Building is done using Gradle.  In the root directory run:
 ----
 ./gradlew
 ----
