@@ -17,7 +17,7 @@ There are numerous examples of using FunctionalJava:
 
 == Release Notes
 
-https://github.com/functionaljava/functionaljava/blob/master/etc/release-notes.md[Release notes] are available on the Github site.
+Release notes are available from the link:download.html[download page].  Alternately you can use the https://github.com/functionaljava/functionaljava/blob/master/etc/release-notes/[index of release notes].
 
 == Javadoc
 
@@ -30,7 +30,9 @@ https://github.com/functionaljava/functionaljava/blob/master/etc/release-notes.m
 * http://www.functionaljava.org/javadoc/3.2/index.html[3.2]
 * http://www.functionaljava.org/javadoc/3.1/index.html[3.1]
 * https://functionaljava.googlecode.com/svn/artifacts/3.0/javadoc/index.html[3.0]
+* https://functionaljava.googlecode.com/svn/artifacts/2.23/javadoc/index.html[2.23]
 * https://functionaljava.googlecode.com/svn/artifacts/2.22/javadoc/index.html[2.22]
+* https://functionaljava.googlecode.com/svn/artifacts/2.21/javadoc/index.html[2.21]
 
 == Building
 

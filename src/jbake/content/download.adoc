@@ -3,13 +3,24 @@
 :jbake-tags:
 :jbake-status: published
 
-== Build System
-
-The recommended way to download the project is by including the Functional Java library in your project.  See the link:quickstart.html[quickstart guide] for how to do this.
-
 == Github Source
 
 The source can be obtained by cloning the https://github.com/functionaljava/functionaljava[Github project] `git clone https://github.com/functionaljava/functionaljava.git`.
 
 Github also provides zips of the source code, so you can download the https://github.com/functionaljava/functionaljava/archive/master.zip[zip of the master branch].
 
+== Build System
+
+The recommended way to download the project is by including the Functional Java library from your project build tool.  See the link:quickstart.html[quickstart guide] for how to do this.
+
+== Release Notes
+
+The current stable release of Functional Java is {fj_version_stable}.  Release notes for each release are available below:
+
+* https://github.com/functionaljava/functionaljava/blob/master/etc/release-notes/[Index of release notes]
+* https://github.com/functionaljava/functionaljava/blob/master/etc/release-notes/release-notes-4.2.adoc[4.2]
+* https://github.com/functionaljava/functionaljava/blob/master/etc/release-notes/release-notes-4.1.adoc[4.1]
+* https://github.com/functionaljava/functionaljava/blob/master/etc/release-notes/release-notes-4.0.adoc[4.0]
+* https://github.com/functionaljava/functionaljava/blob/master/etc/release-notes/release-notes-3.2.adoc[3.2]
+* https://github.com/functionaljava/functionaljava/blob/master/etc/release-notes/release-notes-3.1.adoc[3.1]
+* https://github.com/functionaljava/functionaljava/blob/master/etc/release-notes/release-notes-3.0.adoc[3.0]
