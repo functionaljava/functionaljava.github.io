@@ -119,14 +119,14 @@
 <pre class="prettyprint java language-java"><code>import fj.data.Array;
 import static fj.data.Array.array;
 import static fj.data.List.fromString;
-import static java.lang.Character.isLowerCase;
+import static fj.function.Characters.isLowerCase;
 
 public final class Array_exists {
-  public static void main(final String[] args) {
-    final Array&lt;String&gt; a = array("Hello", "There", "what", "DAY", "iS", "iT");
-    final boolean b = a.exists(s -&gt; fromString(s).forall(isLowerCase));
-    System.out.println(b); // true ("what" provides the only example; try removing it)
-  }
+    public static void main(final String[] args) {
+        final Array&lt;String&gt; a = array("Hello", "There", "what", "DAY", "iS", "iT");
+        final boolean b = a.exists(s -&gt; fromString(s).forall(isLowerCase));
+        System.out.println(b); // true ("what" is the only value that qualifies; try removing it)
+    }
 }</code></pre>
 </div>
 </div>
@@ -147,13 +147,15 @@ public final class Array_exists {
 import static fj.data.Array.array;
 import static fj.Show.arrayShow;
 import static fj.Show.intShow;
+import static fj.function.Integers.even;
 
 public final class Array_filter {
-  public static void main(final String[] args) {
-    final Array&lt;Integer&gt; a = array(97, 44, 67, 3, 22, 90, 1, 77, 98, 1078, 6, 64, 6, 79, 42);
-    final Array&lt;Integer&gt; b = a.filter(i -&gt; i % 2 == 0);
-    arrayShow(intShow).println(b); // {44,22,90,98,1078,6,64,6,42}
-  }
+    public static void main(final String[] args) {
+        final Array&lt;Integer&gt; a = array(97, 44, 67, 3, 22, 90, 1, 77, 98, 1078, 6, 64, 6, 79, 42);
+        final Array&lt;Integer&gt; b = a.filter(even);
+        final Array&lt;Integer&gt; c = a.filter(i -&gt; i % 2 == 0);
+        arrayShow(intShow).println(b); // {44,22,90,98,1078,6,64,6,42}
+    }
 }</code></pre>
 </div>
 </div>
@@ -170,15 +172,20 @@ public final class Array_filter {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint java language-java"><code>import fj.data.Array;
+<pre class="prettyprint java language-java"><code>import fj.F;
+import fj.data.Array;
 import static fj.data.Array.array;
+import static fj.function.Integers.add;
 
 public final class Array_foldLeft {
-  public static void main(final String[] args) {
-    final Array&lt;Integer&gt; a = array(97, 44, 67, 3, 22, 90, 1, 77, 98, 1078, 6, 64, 6, 79, 42);
-    final int b = a.&lt;Integer&gt;foldLeft(i -&gt; (j -&gt; i + j), 0);
-    System.out.println(b); // 1774
-  }
+    public static void main(final String[] args) {
+        final Array&lt;Integer&gt; a = array(97, 44, 67, 3, 22, 90, 1, 77, 98, 1078, 6, 64, 6, 79, 42);
+        final int b = a.foldLeft(add, 0);
+
+        F&lt;Integer, F&lt;Integer, Integer&gt;&gt; add2 = i -&gt; (j -&gt; i + j);
+        final int c = a.foldLeft(add2, 0);
+        System.out.println(b); // 1774
+    }
 }</code></pre>
 </div>
 </div>
@@ -198,14 +205,14 @@ public final class Array_foldLeft {
 <pre class="prettyprint java language-java"><code>import fj.data.Array;
 import static fj.data.Array.array;
 import static fj.data.List.fromString;
-import static java.lang.Character.isLowerCase;
+import static fj.function.Characters.isLowerCase;
 
 public final class Array_forall {
-  public static void main(final String[] args) {
-    final Array&lt;String&gt; a = array("hello", "There", "what", "day", "is", "it");
-    final boolean b = a.forall(s -&gt; fromString(s).forall(isLowerCase));
-    System.out.println(b); // false ("There" is a counter-example; try removing it)
-  }
+    public static void main(final String[] args) {
+        final Array&lt;String&gt; a = array("hello", "There", "what", "day", "is", "it");
+        final boolean b = a.forall(s -&gt; fromString(s).forall(isLowerCase));
+        System.out.println(b); // false ("There" is a counter-example; try removing it)
+    }
 }</code></pre>
 </div>
 </div>
@@ -218,21 +225,24 @@ public final class Array_forall {
 <p><a href="https://github.com/functionaljava/functionaljava/blob/master/demo/src/main/java/fj/demo/Array_map.java">Github Source</a></p>
 </div>
 <div class="paragraph">
-<p>Maps a function across the array of integers. In this case, the function adds 42 to each element of the array to produce a new array.&lt;/p&gt;</p>
+<p>Maps a function across the array of integers. In this case, the function adds 42 to each element of the array to produce a new array.</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint java language-java"><code>import fj.data.Array;
 import static fj.data.Array.array;
+import static fj.function.Integers.add;
 import static fj.Show.arrayShow;
 import static fj.Show.intShow;
 
 public final class Array_map {
-  public static void main(final String[] args) {
-    final Array&lt;Integer&gt; a = array(1, 2, 3);
-    final Array&lt;Integer&gt; b = a.map(i -&gt; i + 42);
-    arrayShow(intShow).println(b); // {43,44,45}
-  }
+    public static void main(final String[] args) {
+        final Array&lt;Integer&gt; a = array(1, 2, 3);
+        final Array&lt;Integer&gt; b = a.map(add.f(42));
+        final Array&lt;Integer&gt; c = a.map(i -&gt; i + 42);
+        arrayShow(intShow).println(b); // {43,44,45}
+        arrayShow(intShow).println(c); // {43,44,45}
+    }
 }</code></pre>
 </div>
 </div>
@@ -249,17 +259,19 @@ public final class Array_map {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint java language-java"><code>import static fj.data.List.list;
-import fj.data.List;
+<pre class="prettyprint java language-java"><code>import fj.data.List;
+import static fj.data.List.list;
+import static fj.function.Integers.add;
 import static fj.Show.intShow;
 import static fj.Show.listShow;
 
 public final class List_map {
-  public static void main(final String[] args) {
-    final List&lt;Integer&gt; a = list(1, 2, 3);
-    final List&lt;Integer&gt; b = a.map(i -&gt; i + 42);
-    listShow(intShow).println(b); // [43,44,45]
-  }
+    public static void main(final String[] args) {
+        final List&lt;Integer&gt; a = list(1, 2, 3);
+        final List&lt;Integer&gt; b = a.map(add.f(42));
+        final List&lt;Integer&gt; c = a.map(i -&gt; i = 42);
+        listShow(intShow).println(b); // [43,44,45]
+    }
 }</code></pre>
 </div>
 </div>
@@ -276,24 +288,28 @@ public final class List_map {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint java language-java"><code>import fj.data.Option;
-import static fj.data.Option.none;
-import static fj.data.Option.some;
+<pre class="prettyprint java language-java"><code>import fj.F;
+import fj.data.Option;
 import static fj.Show.intShow;
 import static fj.Show.optionShow;
+import static fj.data.Option.none;
+import static fj.data.Option.some;
 
 public final class Option_bind {
-  public static void main(final String[] args) {
-    final Option&lt;Integer&gt; o1 = some(7);
-    final Option&lt;Integer&gt; o2 = some(8);
-    final Option&lt;Integer&gt; o3 = none();
-    final Option&lt;Integer&gt; p1 = o1.bind(i -&gt; i % 2 == 0 ? some(i * 3) : Option.&lt;Integer&gt;none());
-    final Option&lt;Integer&gt; p2 = o2.bind(i -&gt; i % 2 == 0 ? some(i * 3) : Option.&lt;Integer&gt;none());
-    final Option&lt;Integer&gt; p3 = o3.bind(i -&gt; i % 2 == 0 ? some(i * 3) : Option.&lt;Integer&gt;none());
-    optionShow(intShow).println(p1); // None
-    optionShow(intShow).println(p2); // Some(24)
-    optionShow(intShow).println(p3); // None
-  }
+    public static void main(final String[] args) {
+        final Option&lt;Integer&gt; o1 = some(7);
+        final Option&lt;Integer&gt; o2 = some(8);
+        final Option&lt;Integer&gt; o3 = none();
+
+        F&lt;Integer, Option&lt;Integer&gt;&gt; f = i -&gt; i % 2 == 0 ? some(i * 3) : none();
+        final Option&lt;Integer&gt; o4 = o1.bind(f);
+        final Option&lt;Integer&gt; o5 = o2.bind(f);
+        final Option&lt;Integer&gt; o6 = o3.bind(f);
+
+        optionShow(intShow).println(o4); // None
+        optionShow(intShow).println(o5); // Some(24)
+        optionShow(intShow).println(o6); // None
+    }
 }</code></pre>
 </div>
 </div>
@@ -310,24 +326,33 @@ public final class Option_bind {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint java language-java"><code>import fj.data.Option;
-import static fj.data.Option.none;
-import static fj.data.Option.some;
+<pre class="prettyprint java language-java"><code>import fj.F;
+import fj.data.Option;
 import static fj.Show.intShow;
 import static fj.Show.optionShow;
+import static fj.data.Option.none;
+import static fj.data.Option.some;
+import static fj.function.Integers.even;
 
 public final class Option_filter {
-  public static void main(final String[] args) {
-    final Option&lt;Integer&gt; o1 = some(7);
-    final Option&lt;Integer&gt; o2 = none();
-    final Option&lt;Integer&gt; o3 = some(8);
-    final Option&lt;Integer&gt; p1 = o1.filter(i -&gt; i % 2 == 0);
-    final Option&lt;Integer&gt; p2 = o2.filter(i -&gt; i % 2 == 0);
-    final Option&lt;Integer&gt; p3 = o3.filter(i -&gt; i % 2 == 0);
-    optionShow(intShow).println(p1); // None
-    optionShow(intShow).println(p2); // None
-    optionShow(intShow).println(p3); // Some(8)
-  }
+    public static void main(final String[] args) {
+        final Option&lt;Integer&gt; o1 = some(7);
+        final Option&lt;Integer&gt; o2 = none();
+        final Option&lt;Integer&gt; o3 = some(8);
+
+        final Option&lt;Integer&gt; o4 = o1.filter(even);
+        final Option&lt;Integer&gt; o5 = o2.filter(even);
+        final Option&lt;Integer&gt; o6 = o3.filter(even);
+
+        F&lt;Integer, Boolean&gt; f = i -&gt; i % 2 == 0;
+        final Option&lt;Integer&gt; o7 = o1.filter(f);
+        final Option&lt;Integer&gt; o8 = o1.filter(f);
+        final Option&lt;Integer&gt; o9 = o1.filter(i -&gt; i % 2 == 0);
+
+        optionShow(intShow).println(o4); // None
+        optionShow(intShow).println(o5); // None
+        optionShow(intShow).println(o6); // Some(8)
+    }
 }</code></pre>
 </div>
 </div>
@@ -345,20 +370,25 @@ public final class Option_filter {
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint java language-java"><code>import fj.data.Option;
-import static fj.data.Option.none;
-import static fj.data.Option.some;
 import static fj.Show.intShow;
 import static fj.Show.optionShow;
+import static fj.data.Option.none;
+import static fj.data.Option.some;
+import static fj.function.Integers.add;
 
 public final class Option_map {
-  public static void main(final String[] args) {
-    final Option&lt;Integer&gt; o1 = some(7);
-    final Option&lt;Integer&gt; o2 = none();
-    final Option&lt;Integer&gt; p1 = o1.map(i -&gt; i + 42);
-    final Option&lt;Integer&gt; p2 = o2.map(i -&gt; i + 42);
-    optionShow(intShow).println(p1); // Some(49)
-    optionShow(intShow).println(p2); // None
-  }
+    public static void main(final String[] args) {
+        final Option&lt;Integer&gt; o1 = some(7);
+        final Option&lt;Integer&gt; o2 = none();
+        final Option&lt;Integer&gt; p1 = o1.map(add.f(42));
+        final Option&lt;Integer&gt; p2 = o2.map(add.f(42));
+
+        final Option&lt;Integer&gt; p3 = o1.map(i -&gt; i + 42);
+        final Option&lt;Integer&gt; p4 = o2.map(i -&gt; i + 42);
+
+        optionShow(intShow).println(p1); // Some(49)
+        optionShow(intShow).println(p2); // None
+    }
 }</code></pre>
 </div>
 </div>
