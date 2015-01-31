@@ -46,8 +46,8 @@ We can easily map over a list to apply the same function to each element in the 
 ----
 import static fj.data.List.list;
 import fj.data.List;
-import static fj.pre.Show.intShow;
-import static fj.pre.Show.listShow;
+import static fj.Show.intShow;
+import static fj.Show.listShow;
 
 public final class ListMapExample {
     public static void main(final String[] args) {
