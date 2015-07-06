@@ -36,3 +36,4 @@ Functional Java provides abstractions for the following types:
 ** Zipper implementations for streams and trees.
 ** Automated specification-based testing framework (`fj.test`).
 ** Fully operational Actors for parallel computations (`fj.control.parallel`) and layered abstractions such as parallel-map, map-reduce, parallel-zip.
+** Optics for updating immutable data including lens, prism, iso, optional, traversal, getter, fold and setter.  Inspired by the Scala Monocle library (https://github.com/julien-truffaut/Monocle) and the Haskell lens library (https://github.com/ekmett/lens).

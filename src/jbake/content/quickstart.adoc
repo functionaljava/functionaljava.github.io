@@ -3,12 +3,13 @@
 :jbake-tags:
 :jbake-status: published
 
-The latest stable version as at January 2015 is +{fj_version_stable}+.  Here is how to quickly add the library to your project and get started.
+The latest stable version as at July 2015 is +{fj_version_stable}+.  Here is how to quickly add the library to your project and get started.
 
-The Functional Java artifact is published to Maven Central using the group `org.functionaljava` with two published artifacts:
+The Functional Java artifact is published to Maven Central using the group `org.functionaljava` with three published artifacts:
 
 * the core library (`functionaljava`)
 * Java 8 specific support (`functionaljava-java8`)
+* Quickcheck property based testing module (`functionaljava-quickcheck`)
 
 == Gradle
 
@@ -18,6 +19,7 @@ To add Functional Java to your Gradle project, add the following snippet to the 
 ----
 compile "org.functionaljava:functionaljava:{fj_version_stable}"
 compile "org.functionaljava:functionaljava-java8:{fj_version_stable}"
+compile "org.functionaljava:functionaljava-quickcheck:{fj_version_stable}"
 ----
 
 == Maven
@@ -34,6 +36,11 @@ Add the following dependencies.
 <dependency>
     <groupId>org.functionaljava</groupId>
     <artifactId>functionaljava-java8</artifactId>
+    <version>{fj_version_stable}</version>
+</dependency>
+<dependency>
+    <groupId>org.functionaljava</groupId>
+    <artifactId>functionaljava-quickcheck</artifactId>
     <version>{fj_version_stable}</version>
 </dependency>
 ----

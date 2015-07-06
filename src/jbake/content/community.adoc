@@ -22,6 +22,7 @@ https://vimeo.com/44767789[What Does Functional Programming Mean?] by Tony Morri
 
 == Resources
 
+* https://travis-ci.org/functionaljava/functionaljava[Travis Continuous Integration Builds]
 * https://functionaljava.ci.cloudbees.com[Cloudbees Cloud Build Machine]
 * http://mvnrepository.com/artifact/org.functionaljava[Maven Repository]
 * https://oss.sonatype.org/content/groups/public/org/functionaljava[Sonatype Repository]

@@ -8,7 +8,7 @@ image::/img/logo-600x144.png[]
 
 Functional Java is an open source library facilitating functional programming in Java.  The library implements numerous basic and advanced programming abstractions that assist composition oriented development.  Functional Java also serves as a platform for learning functional programming concepts by introducing these concepts using a familiar language.
 
-The library is intended for use in production applications and is thoroughly tested using the technique of automated specification-based testing with http://www.scalacheck.org[ScalaCheck].  Functional Java is compiled with Java 8 targeting Java 7 bytecode.  The use of lambdas within the project are backported with the https://github.com/orfjackal/retrolambda[Retro Lambda] library, supporting Java versions 5 to 8 and beyond.
+The library is intended for use in production applications and is thoroughly tested using the technique of automated specification-based testing with http://www.scalacheck.org[ScalaCheck] and Functional Java's Quickcheck module.  Functional Java is compiled with Java 8 targeting Java 7 bytecode.  The use of lambdas within the project are backported with the https://github.com/orfjackal/retrolambda[Retro Lambda] library, supporting Java versions 5 to 8 and beyond.
 
 == Features
 
@@ -16,7 +16,7 @@ Functional Java provides abstractions for the following types:
 
 * Basic Data Structures - total and partial functions, products, unit, option, unbiased and right biased unions (either and validation).
 * Immutable Collections - array, list, vector, stream, set, map, finger tree, heterogenous list.
-* Other Abstractions - monoid, semigroup, natural, random number generator, reader, writer, state, input/output, parser, zipper, specification based testing, actors, concurrency and type conversion.
+* Other Abstractions - monoid, semigroup, natural, random number generator, reader, writer, state, input/output, parser, zipper, specification based testing, actors, concurrency, optics (lens, etc.) and type conversion.
 
 See the link:features.html[features page] for a brief description of each of these types.
 
