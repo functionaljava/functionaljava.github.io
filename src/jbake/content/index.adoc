@@ -16,7 +16,7 @@ Functional Java provides abstractions for the following types:
 
 * Basic Data Structures - total and partial functions, products, unit, option, unbiased and right biased unions (either and validation).
 * Immutable Collections - array, list, vector, stream, set, map, finger tree, heterogenous list.
-* Other Abstractions - monoid, semigroup, natural, random number generator, reader, writer, state, input/output, parser, zipper, specification based testing, actors, concurrency, optics (lens, etc.) and type conversion.
+* Other Abstractions - monoid, semigroup, natural, random number generator, reader, writer, state, input/output, parser, zipper, specification based testing, actors, concurrency, optics (lens, prism, fold, traversal and others) and type conversion.
 
 See the link:features.html[features page] for a brief description of each of these types.
 
