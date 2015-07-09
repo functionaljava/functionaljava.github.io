@@ -3,7 +3,7 @@
 :jbake-tags:
 :jbake-status: published
 
-The latest stable version as at July 2015 is +{fj_version_stable}+.  Here is how to quickly add the library to your project and get started.
+The latest stable version as at July 2015 is {fj_version_stable}.  Here is how to quickly add the library to your project and get started.
 
 The Functional Java artifact is published to Maven Central using the group `org.functionaljava` with three published artifacts:
 
