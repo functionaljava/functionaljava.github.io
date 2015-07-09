@@ -67,10 +67,10 @@
             <p><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The latest stable version as at January 2015 is <code>4.2</code>.  Here is how to quickly add the library to your project and get started.</p>
+<p>The latest stable version as at July 2015 is {fj_version_stable}.  Here is how to quickly add the library to your project and get started.</p>
 </div>
 <div class="paragraph">
-<p>The Functional Java artifact is published to Maven Central using the group <code>org.functionaljava</code> with two published artifacts:</p>
+<p>The Functional Java artifact is published to Maven Central using the group <code>org.functionaljava</code> with three published artifacts:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -79,6 +79,9 @@
 </li>
 <li>
 <p>Java 8 specific support (<code>functionaljava-java8</code>)</p>
+</li>
+<li>
+<p>Quickcheck property based testing module (<code>functionaljava-quickcheck</code>)</p>
 </li>
 </ul>
 </div>
@@ -92,8 +95,9 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>compile "org.functionaljava:functionaljava:4.2"
-compile "org.functionaljava:functionaljava-java8:4.2"</pre>
+<pre>compile "org.functionaljava:functionaljava:4.4"
+compile "org.functionaljava:functionaljava-java8:4.4"
+compile "org.functionaljava:functionaljava-quickcheck:4.4"</pre>
 </div>
 </div>
 </div>
@@ -106,15 +110,20 @@ compile "org.functionaljava:functionaljava-java8:4.2"</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint xml language-xml"><code>&lt;dependency&gt;
+<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependency&gt;
     &lt;groupId&gt;org.functionaljava&lt;/groupId&gt;
     &lt;artifactId&gt;functionaljava&lt;/artifactId&gt;
-    &lt;version&gt;4.2&lt;/version&gt;
+    &lt;version&gt;4.4&lt;/version&gt;
 &lt;/dependency&gt;
 &lt;dependency&gt;
     &lt;groupId&gt;org.functionaljava&lt;/groupId&gt;
     &lt;artifactId&gt;functionaljava-java8&lt;/artifactId&gt;
-    &lt;version&gt;4.2&lt;/version&gt;
+    &lt;version&gt;4.4&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.functionaljava&lt;/groupId&gt;
+    &lt;artifactId&gt;functionaljava-quickcheck&lt;/artifactId&gt;
+    &lt;version&gt;4.4&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -128,7 +137,7 @@ compile "org.functionaljava:functionaljava-java8:4.2"</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint java language-java"><code>import static fj.data.List.list;
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">import static fj.data.List.list;
 import fj.data.List;
 import static fj.Show.intShow;
 import static fj.Show.listShow;
@@ -157,7 +166,7 @@ public final class ListMapExample {
         <hr>
         <div class="row">
           <div class="col-xs-10">
-            <p class="text-muted credit">&copy;  2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.3.1</a> | <i title="Linux" class="fa fa-linux"></i></p>
+            <p class="text-muted credit">&copy;  2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.3.2</a> | <i title="Linux" class="fa fa-linux"></i></p>
           </div>
           <div class="col-xs-2 gotop">
             <a href="#"><i class="fa fa-arrow-circle-up"> top</i></a>

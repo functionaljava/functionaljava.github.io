@@ -74,7 +74,7 @@
 <p>Functional Java is an open source library facilitating functional programming in Java.  The library implements numerous basic and advanced programming abstractions that assist composition oriented development.  Functional Java also serves as a platform for learning functional programming concepts by introducing these concepts using a familiar language.</p>
 </div>
 <div class="paragraph">
-<p>The library is intended for use in production applications and is thoroughly tested using the technique of automated specification-based testing with <a href="http://www.scalacheck.org">ScalaCheck</a>.  Functional Java is compiled with Java 8 targeting Java 7 bytecode.  The use of lambdas within the project are backported with the <a href="https://github.com/orfjackal/retrolambda">Retro Lambda</a> library, supporting Java versions 5 to 8 and beyond.</p>
+<p>The library is intended for use in production applications and is thoroughly tested using the technique of automated specification-based testing with <a href="http://www.scalacheck.org">ScalaCheck</a> and Functional Java&#8217;s Quickcheck module.  Functional Java is compiled with Java 8 targeting Java 7 bytecode.  The use of lambdas within the project are backported with the <a href="https://github.com/orfjackal/retrolambda">Retro Lambda</a> library, supporting Java versions 5 to 8 and beyond.</p>
 </div>
 </div>
 </div>
@@ -93,7 +93,7 @@
 <p>Immutable Collections - array, list, vector, stream, set, map, finger tree, heterogenous list.</p>
 </li>
 <li>
-<p>Other Abstractions - monoid, semigroup, natural, random number generator, reader, writer, state, input/output, parser, zipper, specification based testing, actors, concurrency and type conversion.</p>
+<p>Other Abstractions - monoid, semigroup, natural, random number generator, reader, writer, state, input/output, parser, zipper, specification based testing, actors, concurrency, optics (lens, etc.) and type conversion.</p>
 </li>
 </ul>
 </div>
@@ -113,7 +113,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="prettyprint java language-java"><code>final Array&lt;Integer&gt; a = array(1, 2, 3);
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">final Array&lt;Integer&gt; a = array(1, 2, 3);
 final Array&lt;Integer&gt; b = a.map(i -&gt; i + 42);
 arrayShow(intShow).println(b); // {43,44,45}
 
@@ -134,7 +134,7 @@ arrayShow(intShow).println(array(1, 2, 3).map(i -&gt; i + 42));</code></pre>
         <hr>
         <div class="row">
           <div class="col-xs-10">
-            <p class="text-muted credit">&copy;  2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.3.1</a> | <i title="Linux" class="fa fa-linux"></i></p>
+            <p class="text-muted credit">&copy;  2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.3.2</a> | <i title="Linux" class="fa fa-linux"></i></p>
           </div>
           <div class="col-xs-2 gotop">
             <a href="#"><i class="fa fa-arrow-circle-up"> top</i></a>
