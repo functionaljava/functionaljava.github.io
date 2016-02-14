@@ -13,6 +13,7 @@ Functional Java provides abstractions for the following types:
 ** Optional value - _type-safe null_ (`fj.data.Option`).
 ** Disjoint union data type - _compositional exception handling_ (`fj.data.Either`).
 ** Validation - _right biased_ compositional exception handling (`fj.data.Validation`).
+** Void - a logically uninhabited data type.
 * Immutable Collections
 ** Array wrapper (`fj.data.Array`).
 ** Immutable, in-memory singly linked list (`fj.data.List`).
@@ -22,6 +23,7 @@ Functional Java provides abstractions for the following types:
 ** Immutable set implementation using a red/black tree (`fj.data.Set`).
 ** Immutable multi-way tree - aka rose tree (`fj.data.Tree`).
 ** Immutable tree-map using a red/black tree implementation (`fj.data.TreeMap`).
+** Difference lists, a highly performant list.
 * Other
 ** Monoid (`fj.Monoid`).
 ** Semigroup (`fj.Semigroup`).

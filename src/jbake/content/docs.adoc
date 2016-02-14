@@ -21,10 +21,21 @@ Release notes are available from the link:download.html[download page].  Alterna
 
 == Javadoc
 
-* https://functionaljava.ci.cloudbees.com/job/master/javadoc/[Latest 4.x (currently 4.5-SNAPSHOT)]
+=== 4.5
+
+* http://www.functionaljava.org/javadoc/4.5/functionaljava/index.html[4.5 - functionaljava]
+* http://www.functionaljava.org/javadoc/4.5/functionaljava-java8/index.html[4.5 - functionaljava-java8]
+* http://www.functionaljava.org/javadoc/4.5/functionaljava-quickcheck/index.html[4.5 - functionaljava-quickcheck]
+* http://www.functionaljava.org/javadoc/4.5/functionaljava-java-core/index.html[4.5 - functionaljava-java-core]
+
+=== 4.4
+
 * http://www.functionaljava.org/javadoc/4.4/functionaljava/index.html[4.4 - functionaljava]
 * http://www.functionaljava.org/javadoc/4.4/functionaljava-java8/index.html[4.4 - functionaljava-java8]
 * http://www.functionaljava.org/javadoc/4.4/functionaljava-quickcheck/index.html[4.4 - functionaljava-quickcheck]
+
+=== Others
+
 * http://www.functionaljava.org/javadoc/4.3/functionaljava/index.html[4.3 - functionaljava]
 * http://www.functionaljava.org/javadoc/4.3/functionaljava-java8/index.html[4.3 - functionaljava-java8]
 * http://www.functionaljava.org/javadoc/4.2/functionaljava/index.html[4.2 - functionaljava]
@@ -41,7 +52,7 @@ Release notes are available from the link:download.html[download page].  Alterna
 
 == Building
 
-FunctionalJava uses the Retro Lambda project to backport Java 8 lambdas to Java 7 bytecode.  This requires access to both JDK 7 and 8.  The build system requires the environment variables `JAVA7_HOME` and `JAVA8_HOME` to refer to the appropriate directories.
+FunctionalJava uses the Retro Lambda project to backport Java 8 lambdas to Java 6 bytecode.  This requires access to both JDK 6 and 8.  The build system requires the environment variables `JAVA6_HOME` and `JAVA8_HOME` to refer to the appropriate directories.
 
 Building is done using Gradle.  In the root directory run:
 ----

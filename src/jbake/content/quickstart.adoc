@@ -10,6 +10,7 @@ The Functional Java artifact is published to Maven Central using the group `org.
 * the core library (`functionaljava`)
 * Java 8 specific support (`functionaljava-java8`)
 * Quickcheck property based testing module (`functionaljava-quickcheck`)
+* Java core helper, a simple functional helper for java.util standard types (`functionaljava-java-core`)
 
 == Gradle
 
@@ -20,6 +21,7 @@ To add Functional Java to your Gradle project, add the following snippet to the 
 compile "org.functionaljava:functionaljava:{fj_version_stable}"
 compile "org.functionaljava:functionaljava-java8:{fj_version_stable}"
 compile "org.functionaljava:functionaljava-quickcheck:{fj_version_stable}"
+compile "org.functionaljava:functionaljava-java-core:{fj_version_stable}"
 ----
 
 == Maven
@@ -41,6 +43,11 @@ Add the following dependencies.
 <dependency>
     <groupId>org.functionaljava</groupId>
     <artifactId>functionaljava-quickcheck</artifactId>
+    <version>{fj_version_stable}</version>
+</dependency>
+<dependency>
+    <groupId>org.functionaljava</groupId>
+    <artifactId>functionaljava-java-core</artifactId>
     <version>{fj_version_stable}</version>
 </dependency>
 ----
