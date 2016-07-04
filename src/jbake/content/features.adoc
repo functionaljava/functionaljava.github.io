@@ -19,6 +19,7 @@ Functional Java provides abstractions for the following types:
 ** Immutable, in-memory singly linked list (`fj.data.List`).
 ** Immutable lazy singly linked list (`fj.data.Stream`).
 ** A package (`fj.data.fingertrees`) providing 2-3 finger trees for a functional representation of persistent sequences, supporting access to the ends in amortized O(1) time.
+** Immutable priority queue based on finger trees (`fj.data.PriorityQueue`).
 ** Type-safe heterogeneous list (`fj.data.hlist`) for lists of elements of differing types without sacrificing type-safety.
 ** Immutable set implementation using a red/black tree (`fj.data.Set`).
 ** Immutable multi-way tree - aka rose tree (`fj.data.Tree`).
