@@ -9,15 +9,17 @@ buildscript {
     }
 
     dependencies {
+        classpath "com.ofg:uptodate-gradle-plugin:1.6.0"
         classpath "com.github.mperry:jbake-gradle-plugin:0.3"
-        classpath "org.jbake:jbake-core:2.3.2"
-        classpath "org.asciidoctor:asciidoctorj:1.5.2"
+        classpath "org.jbake:jbake-core:2.4.0"
+        classpath "org.asciidoctor:asciidoctorj:1.5.4"
 
 //        classpath "me.champeau.gradle:jbake-gradle-plugin:0.2.1-SNAPSHOT"
     }
 }
 
 apply plugin: 'me.champeau.jbake'
+apply plugin: "com.ofg.uptodate"
 
 repositories {
 	jcenter()
