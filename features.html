@@ -64,7 +64,219 @@
         <div class="col-md-12">
           <article>
               <h2>Features</h2>
-            <p><div class="paragraph">
+            <p><div class="sect1">
+<h2 id="_first_class_functions">First-Class Functions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Functional Java provides generic interfaces and abstract classes that serve as first-class functions or closures, entirely within Java&#8217;s type system (i.e. without reflection or byte-code manipulation). The library centers around the F interface, which models a function from type A to type B.</p>
+</div>
+<div class="paragraph">
+<p>Functions are written with anonymous class syntax:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">// Regular Style
+Integer timesTwo(Integer i) { return i * 2; }
+// Functional Style
+F timesTwo = new F() { public Integer f(Integer i) { return i * 2; } }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>First-class functions can be composed and passed as arguments to higher-order functions:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">// Regular Style
+Integer timesTwoPlusOne(Integer i) { return plusOne(timesTwo(i)); }
+// Functional Style
+F timesTwoPlusOne = plusOne.o(timesTwo);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And mapped over collections:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">//Regular Style
+List oneUp = new ArrayList();
+for (Integer i: ints) oneUp.add(plusOne(i));
+// Functional Style
+List oneUp = ints.map(plusOne);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Functions up to arity-8 are supported, allowing elimination of nested control constructs:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">// Regular Style
+Integer product = 1;
+for (Integer x: ints) product = x * product;
+List products1 = new ArrayList();
+for (int x = 0; x &lt; ints.size(); x++) {
+  for (int y = 0; y &lt;= x; y++) {
+    products.add(ints.get(x) * ints.get(y);
+  }
+}
+List products2 = new ArrayList();
+for (Integer x: ints) {
+  for (Integer y: ints) {
+    products.add(x * y);
+  }
+}
+// Functional Style
+Integer product = ints.foldLeft(1, multiply);
+List products1 = ints.tails().apply(ints.map(multiply));
+List products2 = ints.bind(ints, multiply);</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_immutable_datastructures">Immutable Datastructures</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Functional Java implements many immutable datastructures, such as</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Singly-linked lists (<code>fj.data.List</code>)</p>
+</li>
+<li>
+<p>Non-strict, potentially infinite, singly-linked list (<code>fj.data.Stream</code>)</p>
+</li>
+<li>
+<p>Non-strict, potentially infinite Strings (<code>fj.data.LazyString</code>)</p>
+</li>
+<li>
+<p>A wrapper for arrays (<code>fj.data.Array</code>)</p>
+</li>
+<li>
+<p>A wrapper for any Iterable type (<code>fj.data.IterableW</code>)</p>
+</li>
+<li>
+<p>Immutable ordered sets (<code>fj.data.Set</code>)</p>
+</li>
+<li>
+<p>Multi-way trees&#8201;&#8212;&#8201;a.k.a. rose trees, with support for infinite trees (<code>fj.data.Tree</code>)</p>
+</li>
+<li>
+<p>Immutable Map, with single-traversal search-and-update (<code>fj.data.TreeMap</code>)</p>
+</li>
+<li>
+<p>Type-safe heterogeneous lists (<code>fj.data.hlist</code>)</p>
+</li>
+<li>
+<p>Pointed lists and trees (<code>fj.data.Zipper</code> and <code>fj.data.TreeZipper</code>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These datatypes come with many powerful higher-order functions, such as map (for functors), bind (monads), apply and zipWith (applicative functors), and cobind (for comonads).</p>
+</div>
+<div class="paragraph">
+<p>Efficient conversions to and from the standard Java Collections classes are provided, and <code>java.util.Iterable</code> is implemented where possible, for use with Java&#8217;s foreach syntax.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_optional_values_type_safe_null">Optional Values (type-safe null)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The library provides a datatype for variables, parameters, and return values that may have no value, while remaining type-safe.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">// Using null
+String val = map.get(key);
+if (val == null || val.equals("")) val = "Nothing";
+return val;
+// Using Option
+return fromString(map.get(key)).orSome("Nothing");</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Optional values are iterable, so they play nicely with foreach syntax, and they can be composed in a variety of ways. The fj.Option class has a plethora of methods for manipulating optional values, including many higher-order functions.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_product_types">Product Types</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Joint union types (tuples) are products of other types. Products of arities 1-8 are provided (<code>fj.P1</code> - <code>fj.P8</code>). These are useful for when you want to return more than one value from a function, or when you want to accept several values when implementing an interface method that accepts only one argument. They can also be used to get products over other datatypes, such as lists (zip function).</p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">// Regular Java
+public Integer albuquerqueToLA(Map&gt; map) {
+  Map m = map.get("Albuquerque");
+  if (m != null) return m.get("Los Angeles"); // May return null.
+}
+// Functional Java with product and option types.
+public Option albuquerqueToLA(TreeMap, Integer&gt;() map) {
+  return m.get(p("Albuquerque", "Los Angeles"));
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_disjoint_union_types">Disjoint Union Types</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>By the same token, types can be added by disjoint union. Values of type <code>Either&lt;A, B&gt;</code> contain a value of either type <code>A</code> or type <code>B</code>. This has many uses. As an argument type, it allows a single argument to depend on the type of value that is received (effectively overloading the method even if the interface is not designed to do that). As a return type, it allows you to return a value of one of two types depending on some condition. For example, to provide error handling where you are not allowed to throw `Exception`s:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">// Meanwhile, inside an iterator implementation...
+public Either next() {
+  String s = moreInput();
+  try {
+    return Either.right(Integer.valueOf(s));
+  } catch (Exception e) {
+    return Either.left(Fail.invalidInteger(s));
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>Either</code> class includes a lot of useful methods, including higher-order functions for mapping and binding over the left and right types, as well as Iterable implementations for both types.</p>
+</div>
+<div class="paragraph">
+<p><a href="http://apocalisp.wordpress.com/2008/06/04/throwing-away-throws">See here for a more detailed explanation of using <code>Either</code> for handling errors.</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_higher_order_concurrency_abstractions">Higher-Order Concurrency Abstractions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Functional Java includes Parallel Strategies (fj.control.parallel.Strategy) for effectively decoupling concurrency patterns from algorithms. Strategy provides higher-order functions for mapping and binding over collections in parallel:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="prettyprint highlight"><code class="language-java" data-lang="java">Strategy s = simpleThreadStrategy();
+List ns = range(Integer.MIN_VALUE, Integer.MIN_VALUE + 10).map(negate).toList();
+List bs = s.parMap(ns, isPrime);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Also included is an implementation of the actor model (<code>fj.control.parallel.Actor</code> and <code>QueueActor</code>), and <code>Promise</code>, which is a composable and non-blocking version of <code>java.util.concurrent.Future</code>.</p>
+</div>
+<div class="paragraph">
+<p><a href="http://apocalisp.wordpress.com/2008/06/30/parallel-list-transformations">A series of blog posts on the concurrency features can be found here.</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_abstractions">Abstractions</h2>
+<div class="sectionbody">
+<div class="paragraph">
 <p>Functional Java provides abstractions for the following types:</p>
 </div>
 <div class="ulist">
@@ -187,6 +399,8 @@
 </div>
 </li>
 </ul>
+</div>
+</div>
 </div></p>
           </article>
         </div> <!-- /.col-md-12 -->
