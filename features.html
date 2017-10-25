@@ -213,12 +213,12 @@ return fromString(map.get(key)).orSome("Nothing");</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="prettyprint highlight"><code class="language-java" data-lang="java">// Regular Java
-public Integer albuquerqueToLA(Map&gt; map) {
+public Integer albuquerqueToLA(Map&lt;String, Integer&gt; map) {
   Map m = map.get("Albuquerque");
   if (m != null) return m.get("Los Angeles"); // May return null.
 }
 // Functional Java with product and option types.
-public Option albuquerqueToLA(TreeMap, Integer&gt;() map) {
+public Option albuquerqueToLA(TreeMap&lt;String, Integer&gt;() map) {
   return m.get(p("Albuquerque", "Los Angeles"));
 }</code></pre>
 </div>
