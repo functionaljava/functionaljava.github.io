@@ -106,14 +106,22 @@ Example:
 
 [source,java]
 ----
+import java.util.Map;
+import static fj.P.*;
+import fj.data.Option;
+import fj.data.TreeMap;
+import fj.P2;
+
 // Regular Java
-public Integer albuquerqueToLA(Map> map) {
-  Map m = map.get("Albuquerque");
-  if (m != null) return m.get("Los Angeles"); // May return null.
+public Integer albuquerqueToLA(Map<String, Map<String, Integer>> map) {
+  Map<String, Integer> m = map.get("Albuquerque");
+  if (m != null)
+    return m.get("Los Angeles"); // May return null.
 }
+
 // Functional Java with product and option types.
-public Option albuquerqueToLA(TreeMap, Integer>() map) {
-  return m.get(p("Albuquerque", "Los Angeles"));
+public Option<Integer> albuquerqueToLA(TreeMap<P2<String, String>, Integer> map) {
+  return map.get(p("Albuquerque", "Los Angeles"));
 }
 ----
 
