@@ -1,38 +1,26 @@
-
 buildscript {
     repositories {
-        mavenLocal()
-        jcenter()
-        maven {
-            url "https://oss.sonatype.org/content/groups/public"
-        }
-    }
-
-    dependencies {
-        classpath "com.ofg:uptodate-gradle-plugin:1.6.0"
-        classpath "com.github.mperry:jbake-gradle-plugin:0.3"
-        classpath "org.jbake:jbake-core:2.4.0"
-        classpath "org.asciidoctor:asciidoctorj:1.5.4"
-
-//        classpath "me.champeau.gradle:jbake-gradle-plugin:0.2.1-SNAPSHOT"
-    }
+    mavenLocal()
+    jcenter()
+    mavenCentral()
+  }
 }
 
-apply plugin: 'me.champeau.jbake'
-apply plugin: "com.ofg.uptodate"
-
-repositories {
-	jcenter()
-    maven {
-        url "https://oss.sonatype.org/content/groups/public"
-    }
+plugins {
+  id 'org.jbake.site' version '1.2.0'
+  id 'org.akhikhl.gretty' version '1.4.0'
+  id "com.ofg.uptodate" version "1.6.3"
 }
 
-dependencies {
+apply plugin: 'war'
+
+gretty {
+   httpPort = 8820
+   contextPath = '/'
+   extraResourceBases = [bake.output]
 }
 
 task publish(type: GradleBuild) {
-    buildFile = 'publish.gradle'
-    tasks = ['publishGhPages']
+   buildFile = 'publish.gradle'
+   tasks = ['publishGhPages']
 }
-
