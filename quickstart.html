@@ -64,57 +64,49 @@
         <div class="col-md-12">
           <article>
               <h2>Quickstart</h2>
-            <p><div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>The latest stable version as at July 2015 is 4.7.  Here is how to quickly add the library to your project and get started.</p>
-</div>
-<div class="paragraph">
-<p>The Functional Java artifact is published to Maven Central using the group <code>org.functionaljava</code> with three published artifacts:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>the core library (<code>functionaljava</code>)</p>
-</li>
-<li>
-<p>Java 8 specific support (<code>functionaljava-java8</code>)</p>
-</li>
-<li>
-<p>Quickcheck property based testing module (<code>functionaljava-quickcheck</code>)</p>
-</li>
-<li>
-<p>Java core helper, a simple functional helper for java.util standard types (<code>functionaljava-java-core</code>)</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_gradle">Gradle</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>To add Functional Java to your Gradle project, add the following snippet to the <em>dependencies</em> section of your <code>build.gradle</code> file.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>compile "org.functionaljava:functionaljava:4.7"
+            <p><div id="preamble"> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>The latest stable version as at July 2015 is 4.7. Here is how to quickly add the library to your project and get started.</p> 
+  </div> 
+  <div class="paragraph"> 
+   <p>The Functional Java artifact is published to Maven Central using the group <code>org.functionaljava</code> with three published artifacts:</p> 
+  </div> 
+  <div class="ulist"> 
+   <ul> 
+    <li> <p>the core library (<code>functionaljava</code>)</p> </li> 
+    <li> <p>Java 8 specific support (<code>functionaljava-java8</code>)</p> </li> 
+    <li> <p>Quickcheck property based testing module (<code>functionaljava-quickcheck</code>)</p> </li> 
+    <li> <p>Java core helper, a simple functional helper for java.util standard types (<code>functionaljava-java-core</code>)</p> </li> 
+   </ul> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_gradle">Gradle</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>To add Functional Java to your Gradle project, add the following snippet to the <em>dependencies</em> section of your <code>build.gradle</code> file.</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre>compile "org.functionaljava:functionaljava:4.7"
 compile "org.functionaljava:functionaljava-java8:4.7"
 compile "org.functionaljava:functionaljava-quickcheck:4.7"
-compile "org.functionaljava:functionaljava-java-core:4.7"</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_maven">Maven</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Add the following dependencies.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependency&gt;
+compile "org.functionaljava:functionaljava-java-core:4.7"</pre> 
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_maven">Maven</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>Add the following dependencies.</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-xml" data-lang="xml">&lt;dependency&gt;
     &lt;groupId&gt;org.functionaljava&lt;/groupId&gt;
     &lt;artifactId&gt;functionaljava&lt;/artifactId&gt;
     &lt;version&gt;4.7&lt;/version&gt;
@@ -133,20 +125,20 @@ compile "org.functionaljava:functionaljava-java-core:4.7"</pre>
     &lt;groupId&gt;org.functionaljava&lt;/groupId&gt;
     &lt;artifactId&gt;functionaljava-java-core&lt;/artifactId&gt;
     &lt;version&gt;4.7&lt;/version&gt;
-&lt;/dependency&gt;</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_first_code_example">First Code Example</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>We can easily map over a list to apply the same function to each element in the list and print the resulting list.  Note that this uses the list <code>fj.data.List</code>.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="prettyprint highlight"><code class="language-java" data-lang="java">import static fj.data.List.list;
+&lt;/dependency&gt;</code></pre> 
+   </div> 
+  </div> 
+ </div> 
+</div> 
+<div class="sect1"> 
+ <h2 id="_first_code_example">First Code Example</h2> 
+ <div class="sectionbody"> 
+  <div class="paragraph"> 
+   <p>We can easily map over a list to apply the same function to each element in the list and print the resulting list. Note that this uses the list <code>fj.data.List</code>.</p> 
+  </div> 
+  <div class="listingblock"> 
+   <div class="content"> 
+    <pre class="prettyprint highlight"><code class="language-java" data-lang="java">import static fj.data.List.list;
 import fj.data.List;
 import static fj.Show.intShow;
 import static fj.Show.listShow;
@@ -159,10 +151,10 @@ public final class ListMapExample {
         // combined into a single line
         listShow(intShow).println(list(1, 2, 3).map(i -&gt; i + 42)); // [43,44,45]
     }
-}</code></pre>
-</div>
-</div>
-</div>
+}</code></pre> 
+   </div> 
+  </div> 
+ </div> 
 </div></p>
           </article>
         </div> <!-- /.col-md-12 -->
@@ -175,7 +167,7 @@ public final class ListMapExample {
         <hr>
         <div class="row">
           <div class="col-xs-10">
-            <p class="text-muted credit">&copy;  2014 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.4.0</a> | <i title="Linux" class="fa fa-linux"></i></p>
+            <p class="text-muted credit">&copy;  2014-2018 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.6.1</a> | <i title="Linux" class="fa fa-linux"></i></p>
           </div>
           <div class="col-xs-2 gotop">
             <a href="#"><i class="fa fa-arrow-circle-up"> top</i></a>

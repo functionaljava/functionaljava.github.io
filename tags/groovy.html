@@ -3,7 +3,6 @@
   <head>
     <title>
     Functional Java
-        - Community
     </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,78 +59,55 @@
     <!-- Begin page content -->
     <div class="container">
 
-      <div class="row">
-        <div class="col-md-12">
-          <article>
-              <h2>Community</h2>
-            <p><div class="sect1"> 
- <h2 id="_articles">Articles</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p>Neal Ford features FunctionalJava in many of his posts on <a href="http://nealford.com/functionalthinking.html">Functional Thinking</a></p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="_videos">Videos</h2> 
- <div class="sectionbody"> 
-  <div class="paragraph"> 
-   <p><a href="https://vimeo.com/44767789">What Does Functional Programming Mean?</a> by Tony Morris</p> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="_repositories">Repositories</h2> 
- <div class="sectionbody"> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p><a href="https://github.com/functionaljava/functionaljava">Github repository</a></p> </li> 
-    <li> <p><a href="https://github.com/functionaljava/functionaljava/issues?state=open">Github issues</a></p> </li> 
-   </ul> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="_communication">Communication</h2> 
- <div class="sectionbody"> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p><a href="http://groups.google.com/group/functionaljava">Mailing list via Google Groups</a></p> </li> 
-    <li> <p><a href="mailto:functionaljava@googlegroups.com">Group email: </a><a href="mailto:functionaljava@googlegroups.com">functionaljava@googlegroups.com</a></p> </li> 
-    <li> <p>IRC Channel: <a href="irc://irc.freenode.net/#functionaljava">#functionaljava</a></p> </li> 
-   </ul> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="_resources">Resources</h2> 
- <div class="sectionbody"> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p><a href="https://travis-ci.org/functionaljava/functionaljava">Travis Continuous Integration Builds</a></p> </li> 
-    <li> <p><a href="https://functionaljava.ci.cloudbees.com">Cloudbees Cloud Build Machine</a></p> </li> 
-    <li> <p><a href="http://mvnrepository.com/artifact/org.functionaljava">Maven Repository</a></p> </li> 
-    <li> <p><a href="https://oss.sonatype.org/content/groups/public/org/functionaljava">Sonatype Repository</a></p> </li> 
-   </ul> 
-  </div> 
- </div> 
-</div> 
-<div class="sect1"> 
- <h2 id="_obsolete">Obsolete</h2> 
- <div class="sectionbody"> 
-  <div class="ulist"> 
-   <ul> 
-    <li> <p><a href="https://code.google.com/p/functionaljava/issues/list">Old issue repository</a></p> </li> 
-    <li> <p><a href="https://code.google.com/p/functionaljava/">Old Google Code Hosting</a></p> </li> 
-    <li> <p><a href="https://code.google.com/p/functionaljavaweb/">Old Website Repository</a></p> </li> 
-    <li> <p><a href="https://functionaljava.googlecode.com/svn/">Old SVN repository</a></p> </li> 
-   </ul> 
-  </div> 
- </div> 
-</div></p>
-          </article>
-        </div> <!-- /.col-md-12 -->
-      </div> <!-- /.row -->
+	    <div class="row">
+          <div class="col-md-9">
+
+            <article>
+			  <h2>Tag #groovy</h2>
+			  <hr>
+              </ul>
+		    </article>
+
+	      </div> <!-- /.col-md -->
+      <div id="sidebar" class="col-md-3">
+        <aside>
+          <section>
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <i class="fa fa-users fa-lg panel-title"> Social</i>
+              </div>
+              <div class="list-group sidebar-list">
+                  <a href="https://github.com/functionaljava" target="_blank" class="list-group-item sidebar-list-item">
+                    <i class="fa fa-github-square fa-2x social-icon"></i> github
+                  </a>
+                  <a href="https://twitter.com/javabake" target="_blank" class="list-group-item sidebar-list-item">
+                    <i class="fa fa-twitter-square fa-2x social-icon"></i> twitter
+                  </a>
+                  <a href="https://plus.google.com/+OpenShift" target="_blank" class="list-group-item sidebar-list-item">
+                    <i class="fa fa-google-plus-square fa-2x social-icon"></i> google+
+                  </a>
+              </div>
+            </div>
+            <div class="panel panel-primary static-box">
+                <div class="panel-heading">
+                    <i class="fa fa-info-circle fa-lg panel-title"> Static</i>
+                </div>
+                <div class="panel-body">
+                    <p><a href="http://en.opensuse.org/Portal:13.1"><img src="http://countdown.opensuse.org/small.png" alt="openSUSE Counter"/></a></p>
+                </div>
+            </div>
+            <div class="panel panel-primary github-repoview">
+                <div class="panel-heading">
+                    <i class="fa fa-github fa-lg panel-title"> Repositories</i>
+                </div>
+                <div id="repoview" class="panel-body">
+                </div>
+            </div>
+          </section>
+        </aside>
+      </div>
+        </div> <!-- /.row -->
+
 
       </div><!-- /.container -->
 
@@ -182,5 +158,27 @@
     </script>
 
 
-        </body>
+      <!-- call api only when sidebar is visible -->
+        <script type="text/javascript">
+          var username = 'functionaljava';
+          var repoLimit = 5;
+          var noRepoMsg = 'No public repositories.';
+          $(function() {
+            $.getJSON('https://api.github.com/users/' + username + '/repos?callback=?', {sort: 'pushed'}, function(resp) {
+              if (resp.data.length > 0) {
+                $('#repoview').append('<ul></ul>');
+                $.each($(resp.data), function(i, val) {
+                  $('#repoview > ul').append('<li><a href="'+val['html_url']+'">'+val['name']+'</a><p>'+((val['description']) ? val['description'] : '(No description.)')+'</p></li>');
+                  if(i == repoLimit -1) {
+                      return false;
+                  }
+                });
+              } else {
+                $('#repoview').append('<p>' + noRepoMsg + '</p>');
+              }
+            });
+          });
+        </script>
+  </body>
 </html>
+
