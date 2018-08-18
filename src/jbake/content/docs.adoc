@@ -21,6 +21,13 @@ Release notes are available from the link:download.html[download page].  Alterna
 
 == Javadoc
 
+=== 4.8
+
+* http://www.functionaljava.org/javadoc/4.8/functionaljava/index.html[4.8 - functionaljava]
+* http://www.functionaljava.org/javadoc/4.8/functionaljava-java8/index.html[4.8 - functionaljava-java8]
+* http://www.functionaljava.org/javadoc/4.8/functionaljava-quickcheck/index.html[4.8 - functionaljava-quickcheck]
+* http://www.functionaljava.org/javadoc/4.8/functionaljava-java-core/index.html[4.8 - functionaljava-java-core]
+
 === 4.7
 
 * http://www.functionaljava.org/javadoc/4.7/functionaljava/index.html[4.7 - functionaljava]

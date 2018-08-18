@@ -17,7 +17,7 @@ The recommended way to download the project is by including the Functional Java 
 
 The current stable release of Functional Java is {fj_version_stable}.  Release notes for each release are available below:
 
-* https://github.com/functionaljava/functionaljava/blob/master/etc/release-notes/[Index of release notes]
+* https://github.com/functionaljava/functionaljava/blob/master/ChangeLog.md[4.8 and later]
 * https://github.com/functionaljava/functionaljava/blob/master/etc/release-notes/release-notes-4.7.adoc[4.7]
 * https://github.com/functionaljava/functionaljava/blob/master/etc/release-notes/release-notes-4.6.adoc[4.6]
 * https://github.com/functionaljava/functionaljava/blob/master/etc/release-notes/release-notes-4.5.adoc[4.5]
