@@ -21,6 +21,16 @@ Release notes are available from the link:download.html[download page].  Alterna
 
 == Javadoc
 
+=== 5.0
+
+* http://www.functionaljava.org/javadoc/5.0/functionaljava/index.html[5.0 - functionaljava]
+* http://www.functionaljava.org/javadoc/5.0/functionaljava-quickcheck/index.html[5.0 - functionaljava-quickcheck]
+* http://www.functionaljava.org/javadoc/5.0/functionaljava-java-core/index.html[5.0 - functionaljava-java-core]
+
+=== 4.9
+
+TODO
+
 === 4.8.1
 
 * http://www.functionaljava.org/javadoc/4.8.1/functionaljava/index.html[4.8.1 - functionaljava]
@@ -80,7 +90,9 @@ Release notes are available from the link:download.html[download page].  Alterna
 
 == Building
 
-FunctionalJava uses the Retro Lambda project to backport Java 8 lambdas to Java 6 bytecode.  This requires access to both JDK 6 and 8.  The build system requires the environment variables `JAVA6_HOME` and `JAVA8_HOME` to refer to the appropriate directories.
+FunctionalJava 5.x uses Java 8.  Future releases will follow the Java long term support model, the future series 6.x uses Java 11 and 7.x uses Java 17.
+
+The FunctionalJava 4.x series uses the Retro Lambda project to backport Java 8 lambdas to Java 6 bytecode.  This requires access to both JDK 6 and 8.  The build system requires the environment variables `JAVA6_HOME` and `JAVA8_HOME` to refer to the appropriate directories.
 
 Building is done using Gradle.  In the root directory run:
 ----

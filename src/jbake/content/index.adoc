@@ -8,7 +8,7 @@ image::/img/logo-600x144.png[]
 
 Functional Java is an open source library facilitating functional programming in Java.  The library implements numerous basic and advanced programming abstractions that assist composition oriented development.  Functional Java also serves as a platform for learning functional programming concepts by introducing these concepts using a familiar language.
 
-The library is intended for use in production applications and is thoroughly tested using the technique of automated specification-based testing with http://www.scalacheck.org[ScalaCheck] and Functional Java's Quickcheck module.  Functional Java is compiled with Java 8 targeting Java 6 bytecode.  The use of lambdas within the project are backported with the https://github.com/orfjackal/retrolambda[Retro Lambda] library, supporting Java versions 5 to 8 and beyond.
+The library is intended for use in production applications and is thoroughly tested using the technique of automated specification-based testing with http://www.scalacheck.org[ScalaCheck] and Functional Java's Quickcheck module.  The latest version, 5.0, is compiled with Java 8 targeting Java 8 bytecode.  The 4.x series targets Java 6 bytecode.  The future 6.x series and 7.x series target Java 11 and 17 respectively.  The use of lambdas within the project for the 4.x releases are backported with the https://github.com/orfjackal/retrolambda[Retro Lambda] library.
 
 == Features
 
